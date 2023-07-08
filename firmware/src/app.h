@@ -46,38 +46,44 @@ extern "C" {
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
-enum Program {
-  Normal,
+typedef enum{
+  Normal=1,
   Sports,
-  Delicate,
-  Bedding,
   Wool,
-};
+  Bedding,
+}Prog_load;
 
-enum Temperature {
+typedef enum{
     Warm,
     Cold,
     Hot,
-    E_Hot,
-};
+}Temp_load;
 
-enum SLevel {
+typedef enum{
     Medium,
     High,
     Low,
-};
+}SLevel_load;
 
-enum buttonTracker {
+enum buttonTracker{
     Program,
     Temperature,
     SLevel,
     Options,       
 };
 
-enum current_screen {
+typedef enum {
     SCREEN0=0,
     SCREEN1,
-};
+} CURRENT_SCREEN;
+
+typedef struct
+{
+    bool sound;
+    bool xrinse;
+    bool preWash;
+  
+} LOAD_OPTIONS_STATUS;
 
 // *****************************************************************************
 /* Application states
@@ -95,6 +101,7 @@ typedef enum
     /* Application's state machine's initial state. */
     APP_STATE_INIT=0,
     APP_STATE_SERVICE_TASKS,
+    APP_STATE_SWITCH_SCREEN,
     /* TODO: Define states used by the application state machine. */
 
 } APP_STATES;
@@ -117,22 +124,23 @@ typedef struct
 {
     /* The application's current state */
     APP_STATES state;
+    CURRENT_SCREEN screen;
 
-    /* TODO: Define any additional data used by the application. */
+  
 
 } APP_DATA;
 
 /*CANVAS ID*/
-/*COMMON*/
-#define BACKGROUND_CANVAS_ID 0
-#define TIME_CANVAS_ID 1
-#define TOP_CANVAS_ID 3
-
 /*SCREEN 1*/
+#define BACKGROUND1_CANVAS_ID 0
+#define TIME1_CANVAS_ID 1
 #define WAVES_CANVAS_ID 2
-
+#define MENU_CANVAS_ID 3
 /*SCREEN2*/
-#define ROUND_CANVAS_ID 4
+#define BACKGROUND2_CANVAS_ID 4
+#define TIME2_CANVAS_ID 5
+#define ROUND_CANVAS_ID 6
+#define TOP_CANVAS_ID 7
 
 
 

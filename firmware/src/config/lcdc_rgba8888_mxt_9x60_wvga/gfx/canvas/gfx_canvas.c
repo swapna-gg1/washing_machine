@@ -93,7 +93,10 @@ uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb0[80
 uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb1[190 *45] = { 0 };
 uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb2[800 *180] = { 0 };
 uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb3[800 *480] = { 0 };
-uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb4[265 *245] = { 0 };
+uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb4[800 *480] = { 0 };
+uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb5[190 *45] = { 0 };
+uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb6[265 *245] = { 0 };
+uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb7[800 *480] = { 0 };
 
 static void gfxcObjectsInitialize(void)
 {
@@ -112,8 +115,17 @@ static void gfxcObjectsInitialize(void)
     gfxcSetPixelBuffer(id, 800, 480, GFX_COLOR_MODE_RGBA_8888,
                        (void *) canvasfb3);
     id = gfxcCreate();
-    gfxcSetPixelBuffer(id, 265, 245, GFX_COLOR_MODE_RGBA_8888,
+    gfxcSetPixelBuffer(id, 800, 480, GFX_COLOR_MODE_RGBA_8888,
                        (void *) canvasfb4);
+    id = gfxcCreate();
+    gfxcSetPixelBuffer(id, 190, 45, GFX_COLOR_MODE_RGBA_8888,
+                       (void *) canvasfb5);
+    id = gfxcCreate();
+    gfxcSetPixelBuffer(id, 265, 245, GFX_COLOR_MODE_RGBA_8888,
+                       (void *) canvasfb6);
+    id = gfxcCreate();
+    gfxcSetPixelBuffer(id, 800, 480, GFX_COLOR_MODE_RGBA_8888,
+                       (void *) canvasfb7);
 }
 
 static void effectsTimerCallback ( uintptr_t context )

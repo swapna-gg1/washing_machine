@@ -167,26 +167,26 @@ build/lcdc_rgba8888_mxt_9x60_wvga/debug/_ext/802015102/drv_maxtouch.o: \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/flexcom/twi/master/plib_flexcom0_twi_master.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/flexcom/twi/master/plib_flexcom_twi_master_common.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/lcdc/plib_lcdc.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/time/sys_time.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_common.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_module.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_common.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/time/sys_time_definitions.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/int/sys_int.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/int/sys_int_mapping.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/configuration.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/user.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/device.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/i2c/drv_i2c.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/i2c/drv_i2c_definitions.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_module.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_common.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/driver.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/driver_common.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/int/sys_int.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/int/sys_int_mapping.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/i2c/src/drv_i2c_local.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/i2c/drv_i2c_definitions.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/osal/osal.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/configuration.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/user.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/device.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/osal/osal_definitions.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/osal/osal_impl_basic.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/time/sys_time.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_common.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/time/sys_time_definitions.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/canvas/gfx_canvas_api.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/input/sys_input.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/input/sys_input_keyboard.h \
@@ -541,35 +541,21 @@ build/lcdc_rgba8888_mxt_9x60_wvga/debug/_ext/802015102/drv_maxtouch.o: \
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/lcdc/plib_lcdc.h:
 
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/time/sys_time.h:
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/i2c/drv_i2c.h:
 
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_common.h:
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/i2c/drv_i2c_definitions.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_module.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_common.h:
 
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/time/sys_time_definitions.h:
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/driver.h:
+
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/driver_common.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/int/sys_int.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/int/sys_int_mapping.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/configuration.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/user.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/device.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/i2c/drv_i2c.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/i2c/drv_i2c_definitions.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/driver.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/driver_common.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/driver/i2c/src/drv_i2c_local.h:
 
@@ -577,9 +563,23 @@ build/lcdc_rgba8888_mxt_9x60_wvga/debug/_ext/802015102/drv_maxtouch.o: \
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/osal/osal.h:
 
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/configuration.h:
+
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/user.h:
+
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/device.h:
+
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/osal/osal_definitions.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/osal/osal_impl_basic.h:
+
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/time/sys_time.h:
+
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system.h:
+
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/system_common.h:
+
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/system/time/sys_time_definitions.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/canvas/gfx_canvas_api.h:
 

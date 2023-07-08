@@ -3426,24 +3426,24 @@
     &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_9X60_Evaluation_Kit&quot; x=&quot;130&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;210&quot; y=&quot;320&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;542&quot; y=&quot;19&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drv_i2c&quot; x=&quot;30&quot; y=&quot;500&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;flexcom0&quot; x=&quot;30&quot; y=&quot;760&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;gfx_canvas&quot; x=&quot;189&quot; y=&quot;819&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drv_i2c&quot; x=&quot;232&quot; y=&quot;208&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;flexcom0&quot; x=&quot;36&quot; y=&quot;197&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;gfx_canvas&quot; x=&quot;671&quot; y=&quot;300&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_disp_pdatm5000_800x480&quot; x=&quot;210&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_hal_le&quot; x=&quot;30&quot; y=&quot;320&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_legato&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;gfx_maxtouch_controller&quot; x=&quot;182&quot; y=&quot;211&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;lcdc&quot; x=&quot;30&quot; y=&quot;680&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;le_gfx_lcdc&quot; x=&quot;192&quot; y=&quot;618&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;legato_gfx_pda_tm5000&quot; x=&quot;30&quot; y=&quot;960&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;rtt&quot; x=&quot;30&quot; y=&quot;200&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sys_input&quot; x=&quot;30&quot; y=&quot;420&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_time&quot; x=&quot;190&quot; y=&quot;500&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;tc0&quot; x=&quot;189&quot; y=&quot;740&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;tc1&quot; x=&quot;30&quot; y=&quot;840&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_hal_le&quot; x=&quot;374&quot; y=&quot;67&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_legato&quot; x=&quot;894&quot; y=&quot;310&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;gfx_maxtouch_controller&quot; x=&quot;430&quot; y=&quot;135&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;lcdc&quot; x=&quot;283&quot; y=&quot;413&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;le_gfx_lcdc&quot; x=&quot;484&quot; y=&quot;299&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;legato_gfx_pda_tm5000&quot; x=&quot;239&quot; y=&quot;16&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;rtt&quot; x=&quot;713&quot; y=&quot;18&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sys_input&quot; x=&quot;0&quot; y=&quot;104&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_time&quot; x=&quot;777&quot; y=&quot;174&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;tc0&quot; x=&quot;645&quot; y=&quot;196&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;tc1&quot; x=&quot;735&quot; y=&quot;100&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -7131,7 +7131,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas4Height&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;245&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;480&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
@@ -7151,7 +7151,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas4Width&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;265&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;800&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
@@ -7170,7 +7170,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas5FrameBufferAlloc"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas5FrameBufferAlloc&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Auto&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7179,7 +7181,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas5Height"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas5Height&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;45&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7197,7 +7201,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas5Width"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas5Width&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;190&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7215,7 +7221,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas6FrameBufferAlloc"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas6FrameBufferAlloc&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Auto&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7224,7 +7232,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas6Height"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas6Height&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;245&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7242,7 +7252,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas6Width"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas6Width&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;265&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7260,7 +7272,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas7FrameBufferAlloc"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas7FrameBufferAlloc&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Auto&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7269,7 +7283,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas7Height"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas7Height&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;480&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7287,7 +7303,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas7Width"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas7Width&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;800&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7435,7 +7453,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="EffectsInterval"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;EffectsInterval&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;4&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
 </value>
@@ -7490,7 +7510,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;NumCanvasObjects&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;5&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;8&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
@@ -10113,7 +10133,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tc0&gt;
   &lt;tc0 dnOrder=&quot;0&quot; id=&quot;TC1_TIMER_PERIOD_COUNT&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;20000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;8000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tc0&gt;
 &lt;/tc0&gt;
@@ -10125,7 +10145,7 @@
   &lt;tc0 dnOrder=&quot;0&quot; id=&quot;TC1_TIMER_PERIOD_MS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc0&quot; value=&quot;0.0&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;100.0&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;40.0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tc0&gt;
 &lt;/tc0&gt;
@@ -11044,7 +11064,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tc1&gt;
   &lt;tc1 dnOrder=&quot;0&quot; id=&quot;TC0_TIMER_PERIOD_COUNT&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc1&quot; value=&quot;20000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tc1&quot; value=&quot;80000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tc1&gt;
 &lt;/tc1&gt;
@@ -11055,7 +11075,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tc1&gt;
   &lt;tc1 dnOrder=&quot;0&quot; id=&quot;TC0_TIMER_PERIOD_MS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;100.0&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;0.4&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tc1&gt;
 &lt;/tc1&gt;
@@ -11953,6 +11973,10 @@
          <hash>e90101546603bb027c7f1bada01216264a89ae4a17de206606faf6a81c52e43d</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\r13.c</file>
+         <hash>087bfadf4dd2aaa36cc6ed815d50aaf3163a38361e3e6eacf727500191ecfd57</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\common\legato_error.c</file>
          <hash>2b79dc26739af330bc81aba844b36a2bc943579f24d6698f7ad076c0d1683f37</hash>
       </entry>
@@ -12030,7 +12054,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Rinse3.c</file>
-         <hash>8d9287a1f2694d01ecf0c3af80e163d8241280a904b73500e81241096e206f8d</hash>
+         <hash>72e1705d1cf8b06710287e9532a25c5c86c8add988d8836659ccd0bea80df9cb</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\bed_but_up.c</file>
@@ -12130,7 +12154,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\legato_config.h</file>
-         <hash>7a404164809c082aa96e593cd810c7d50c44f7e8e77b50eedd9ccadcc6d56264</hash>
+         <hash>59ad61a8c8fc9e8377fd66ebf00b70064caa7faa5e9a5aedd58a8fd1037add91</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\pin_configurations.csv</file>
@@ -12159,10 +12183,6 @@
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\mono\legato_imagedecoder_mono_read_stream.c</file>
          <hash>f9d136caf93a756039b4266cf1d31cfde80b6d3c80235525d5741dd749441905</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\prewash_but_on.c</file>
-         <hash>0c3700a60afb40915f0f83066ef0df7cb7069e1971e05b4284f51d157b9f43c9</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\system\system_common.h</file>
@@ -12218,7 +12238,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Wash0.c</file>
-         <hash>b8eed5bc8ca319072d454d27afe5581040eb22d4c9ed7b5f608a9293370e0f1e</hash>
+         <hash>d7aefae070dd430efab10961e129d776d6614d5ceddf1a77bfa935d8b7ae8965</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\system\input\sys_input_listener.h</file>
@@ -12259,6 +12279,10 @@
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\user.h</file>
          <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image19.c</file>
+         <hash>f5f4f437954871ea601857e36fd5047b89e5acf65c5049073d5e336ddc35c794</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\radiobutton\legato_widget_radiobutton.c</file>
@@ -12334,7 +12358,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Wash1.c</file>
-         <hash>b2a96410d7d41ad17ec222ccaf9e3f9284c81628799bddd3200a17298b4b9291</hash>
+         <hash>f77fc34d09a5cac3e8f1b4aa600268fb0062c26365fefae843f736fc68c3c06f</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\component\mpddrc.h</file>
@@ -12390,7 +12414,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\le_gen_assets.h</file>
-         <hash>f02d42c8bddb4924cc0c8d99a0523f333c2aa01c375546553b87ec6b4c6b467b</hash>
+         <hash>37e4d338239061d68913e08250c2d8e6ab990eda565274f1f8758f6f4bc4414b</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\normal_but_down.c</file>
@@ -12402,7 +12426,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\le_gen_scheme.h</file>
-         <hash>0e34deabfc734ea4890b4ddae17257370bffad6ef2db6fc5c5ac5f9038708b28</hash>
+         <hash>432920ba797a52580e44ec00d5cf8cc88f5d0fb41e604f430def70b2b5b2f4bd</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\component\pmc.h</file>
@@ -12414,7 +12438,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\le_gen_scheme.c</file>
-         <hash>0bc4f655335655bb9a93d54c56fb69c6589a0fad61ee0d23e0a71575395994d8</hash>
+         <hash>8596fc5860449890a35a97920d0c014f40cea871adebd07c6ecd9df739a96fae</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\component\pmerrloc.h</file>
@@ -12442,15 +12466,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Wash2.c</file>
-         <hash>25e2898b7e685eba089425b03795931e52558130ba904ef621c66c1f4008bce1</hash>
+         <hash>b4e715b3b365c7f128acb8353e1467b0802f905688b6bcf389d65c784b3d2d56</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\string\legato_stringutils.c</file>
          <hash>1394864787af92ac726f1112bb743bf620b0bcee496ccf56299f5952b7cf698e</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\sound_but_on.c</file>
-         <hash>8361f7b4bfbc7eeb43d58ed7aedd8bdf3e0f1fba5694820f4318fb5666b9f879</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\instance\pioc.h</file>
@@ -12458,7 +12478,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\peripheral\tc\plib_tc0.c</file>
-         <hash>22582941b0f9d37d70f58d9b02b3334f9d6862eadf4171fa0a0c0b6dd2918d5f</hash>
+         <hash>d8284cfde76a3e2807b99bbaf155b6cbaded8b341e1c7fd95ad628eba96c010e</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\component\pwm.h</file>
@@ -12585,12 +12605,16 @@
          <hash>632c78c323cb9f8c6359f20337440c08f8461eb4b0304552b6a3cfd5c4052620</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image21.c</file>
+         <hash>8def76f5d13e7949520b0ba8587fda4c8abc75bbca422b9b62a43df2887efc38</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\string\legato_string.c</file>
          <hash>1849e47edfdb44bfc2cb9a13cd4773db675723483d206211441c738f7283ca53</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Wash3.c</file>
-         <hash>57c66a78b485441c729254f76dc5a76d4d585fd2d61d11c9dd335c6625cf32dc</hash>
+         <hash>10178bcc62874d44811827b5870485ae5a7071c23544cd9d841c4c7fad826ede</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\legato_editwidget.c</file>
@@ -12606,7 +12630,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\peripheral\tc\plib_tc1.c</file>
-         <hash>f2461a5522809ff0bf89b90ce448a4019cec87fd99ae05f14d8c8ae0c76caac4</hash>
+         <hash>545158119af8e23d7f3a6a9e96f2abe1bac1e82a712bf7ea8667045ee048edf4</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\wool_but_down.c</file>
@@ -12634,7 +12658,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\sports_but_up.c</file>
-         <hash>edf2621bc166256f86a0ec0975a85cdd1fa4247ee1a587cc036072b315834caf</hash>
+         <hash>4a28ea32276e908b086bfaecffc2bcfd2772afb195bdff4b5a03f2412b5aea96</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\keypad\legato_widget_keypad.h</file>
@@ -12702,11 +12726,15 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Rinse0.c</file>
-         <hash>29c20a6b9107a89a53a31a941aa405cf3fa72b49bb19c376ecd30d5e0d37caca</hash>
+         <hash>0f4bf5e1b9e4f5404534d1b55e0d99c21408066c9e3c463cfcb449d52cc5bfe4</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\r3.c</file>
          <hash>5d4ddf9541e1d1e73a38b6742f80b7905c3ab03310254046ae2858e25278df0c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\sound_but.c</file>
+         <hash>d3fe92363bf9f3a0b987b05c21db6fcc6ce85d858a147f5680e81160dbf4db24</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\raw\legato_imagedecoder_raw_read_internal.c</file>
@@ -12739,6 +12767,10 @@
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\listwheel\legato_widget_listwheel_skin_classic.c</file>
          <hash>9ce4c574de757f31f865a332c0cd86858de0fedfcdd46f3bfceeed18dbb73ff2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image22.c</file>
+         <hash>6746451a9e776e66877648b6325244f4141c700c0b7c42503258016e634d9f5e</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\initialization.c</file>
@@ -12790,11 +12822,15 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\canvas\gfx_canvas.h</file>
-         <hash>e9b0c0882833a68ed26514563899f6a86d5d8cf55164d3b50794e1159c1b0780</hash>
+         <hash>b51b5fceb923080e94f9d32d8910686ba0dd69fb09cf195a65f001eab697351a</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\canvas\gfx_canvas.c</file>
-         <hash>f1d6a9dec51116cac4e6973f7fb327aac6995bef0e1e41fabf5141ad8a596149</hash>
+         <hash>16ce63453b4d67859e4e7581d536b706ef5f6c05bbadecb5b3ceaa4f749b08c2</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\sports_cycle.c</file>
+         <hash>55dab80295eb784387b7a7a3eb53cb29ef835e6853da0d7bc0351e7f7d1375ca</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_color.c</file>
@@ -12814,7 +12850,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>5555536e2e37033e4e7ea6ad2100f188904fe58a76e89ee8a2ac2ef480164027</hash>
+         <hash>64670d3c9ae9f0c8af48b0a80251a36f00e73c713b708c3b1f807e1655c0dc16</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\component\ssc.h</file>
@@ -12838,11 +12874,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Rinse1.c</file>
-         <hash>fdea1ce98b4bcbb81febf0da2e48ae4b6ca7639048b217657bce707991990a01</hash>
+         <hash>1acd11d84ca30cd3952bf74f17e6c0f8414809b3c4598975486cb6a8d3714c67</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>
-         <hash>b69c8643ab6b0e0e3d1003e271ec4b34071f68bfdc7377be43dc642bf1bc1bc8</hash>
+         <hash>b4e1ffbe22bd8728a98985636668fdfa25259986c71b3e1920f0785e5173d1ac</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\list\legato_widget_list.c</file>
@@ -12854,7 +12890,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\options_but_up.c</file>
-         <hash>be2fe698264e19232aff295f54cc68c162b8fb3634318c5c8f0d8dedb5ad5623</hash>
+         <hash>7fff1902e902ccb07f5dd138f2b234a5a618a8ccbdc878e90e99160131cf0e1f</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\font\legato_rasterfont_liberationmono8.c</file>
@@ -12901,20 +12937,12 @@
          <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
       </entry>
       <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\prewash_but_off.c</file>
-         <hash>976db5daa50f4173c11a3071a2c70365cfce1ce76c74de1e5af188cad8f33d37</hash>
-      </entry>
-      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\system\int\sys_int_mapping.h</file>
          <hash>652a7ea6c065e3a4cbcbfaef7c3519fca207fa36de25351875c3ba746dff242b</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\string\legato_tablestring.h</file>
          <hash>4551ff37ce3fb51d88140c4c241e9a60967f7b04fe24a939c36aeec829f8656c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\sound_but_off.c</file>
-         <hash>94644c4be8d74b956f74873f33d759c96e9c62a21eb14645c710043644ee64e4</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\common\legato_utils.c</file>
@@ -12934,7 +12962,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Rinse2.c</file>
-         <hash>f1e4bf8bcc85d687f96f7c02a11d5b9905b12da181c2355ee793f50e4b2e7c3a</hash>
+         <hash>3d3bc389cd81bd80eb63abaf89030012fae47854861b635431580945a9f74fe6</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\r1.c</file>
@@ -12950,7 +12978,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\font\le_gen_fonts.c</file>
-         <hash>7280494c0eac2ef3cce7f16ee9294fa972b491f1e6290079726b437c87fb7748</hash>
+         <hash>541d0114f02aed722b115577f3435a50954f8f668b9e2a224540e7b62a155d79</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\toolchain_specifics.h</file>
@@ -13010,7 +13038,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\options_but_down.c</file>
-         <hash>8066732b75ab17216cac0ae90937438981bfa6d0a560caa8c15fe10781c897ff</hash>
+         <hash>5afbf3ddf5594b40800dd3992600bc14904f85f933abe8cdcd2fce79e3451122</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image20.c</file>
+         <hash>fb32ed8a5b4fe9cc92163626fc4775e8fa9a7995359ddefc1f03dbab9a196c5c</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\mono\legato_imagedecoder_mono.c</file>
@@ -13066,7 +13098,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\le_gen_stringtable.c</file>
-         <hash>17cb5d976b647cc00974612e2c925ac045f4dbb66b82b8f36e0495344f4ca9fd</hash>
+         <hash>15f8f1e09eeee65befd0d677ff1f9b0e2d8bbe79f9cc0fe1089eb5e8d5539ef1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image13.c</file>
+         <hash>42bbaba4296874cac391ced4579dff5c058e20a5b1b36e5004cbe4776160c328</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\start_but_down.c</file>
@@ -13121,6 +13157,14 @@
          <hash>8e3de8e4c850d8674b7085b78db8cc85e3381b187a8a86e2c28bf0ef8d7db7ea</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Bedding_cycle.c</file>
+         <hash>f227985f13828dbfb751657413c44228fce6719f004837fd23118da4f4c8b0c8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image25.c</file>
+         <hash>b16923d1a933a5c30f082b558e48aa60a061291236ff8fcf9d240c6a5ad0c386</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\drawsurface\legato_widget_drawsurface.h</file>
          <hash>e7e82efaeaa2af539571f167d8a66eeb80ae9bb53793375416d67d109970cff0</hash>
       </entry>
@@ -13173,6 +13217,10 @@
          <hash>20ea84044c8a77967c8e31743da8a64083e03d74e9cd0212469507e92faae3d8</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image14.c</file>
+         <hash>bf4cccaa7358777df7633fccc90545a88971d852030695f52089a6261f66ac2f</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\raw\legato_imagedecoder_raw_mask.c</file>
          <hash>04a56f67ab3ef840d89ab44d03ddac16e4ad55dbbcce72d91174d19071c749d7</hash>
       </entry>
@@ -13186,7 +13234,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\high_but_down.c</file>
-         <hash>e779fbca4750eb3e728b126d77fd541a961be5e1c63227496d02c0a38a02623b</hash>
+         <hash>f26b716b428badd9fc62cee281090d5ae69e9537809332c84b3c75488423f1f4</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_rleindex.c</file>
@@ -13198,7 +13246,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Spin0.c</file>
-         <hash>a6b6072a48b74473fbea7a6ad1a5a353fb38fa73c67fa41203da9a2c192985ce</hash>
+         <hash>bc68f7141a447b0d6ecbc4ceb930d18c8f7811761db40b17417391b92d5c92ad</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\component\matrix.h</file>
@@ -13237,10 +13285,6 @@
          <hash>076403f0c25f2a55a5506f3774ff33f692701387b745da4eb51e203604da9bc5</hash>
       </entry>
       <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\xrinse_but_on.c</file>
-         <hash>a96392e4ff6f4573ffeda96e5f328e0ae7edb055cb1f474d92cbaceaa17952c9</hash>
-      </entry>
-      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\high_but_up.c</file>
          <hash>d573c774588d6f445cc303120c0c80755675e6d6490d9cac488056fcc599da2f</hash>
       </entry>
@@ -13270,7 +13314,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\PreWash2.c</file>
-         <hash>88195455bdc138b0d3d1190d7a3e5ef15b19b82c8e41b3429d0021f6c4f72961</hash>
+         <hash>012e4b9a09163fab82fa705001ef59f272d7daca9ef2d4db21aff2700d1a980f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\xrinse_but.c</file>
+         <hash>acb67ccc0e2293aa540cfa8bbf74e158c9a1b0e667cc09f90b0080f8b9b5c5ad</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\component\udphs.h</file>
@@ -13357,6 +13405,10 @@
          <hash>157653e909a6bc0f16d7e90539e18abd3828bc81e44e64f70d4d76fa1d518df2</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image23.c</file>
+         <hash>3458ab884ac655a009a45d46744905ae1ad876c1a10e4f83d4f540943ed6367d</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\textfield\legato_widget_textfield.h</file>
          <hash>c5812ba643d018f40166c5d74c862fd5a0f0e2421e7c2955e5d363c5b1ec531e</hash>
       </entry>
@@ -13374,7 +13426,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\PreWash3.c</file>
-         <hash>e92c1d1c78356a29f5ada965b3c6e5893936e77cd281570c76709da825aae6b1</hash>
+         <hash>f4589fe254fff0cf952764a790b05fa0f4b95af3c03fac828222c06c8805e4cc</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\hot_but_down.c</file>
@@ -13387,6 +13439,10 @@
       <entry>
          <file>..\src\packs\SAM9X60_DFP\component\syscwp.h</file>
          <hash>e1de8c1d87ab6d5cb78e0aa4ef0890a1761750073287087d7493adea275fb5a1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\prewash_but.c</file>
+         <hash>8da4a68e89d6fbfa1aa548881fa21d63b2fd3b1d3d8b02617960ae17ed560f2f</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\instance\rstc.h</file>
@@ -13437,6 +13493,10 @@
          <hash>08b11f93965de903d50cc5022545b79093197efda4a8707ace787f0ece26adc7</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image24.c</file>
+         <hash>6129c71516d26e86d006127d0f4fd8c3a5dfd2683a65990b75894e204b58f660</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\groupbox\legato_widget_groupbox.c</file>
          <hash>ea8c4c0c46bc4ee4867dcd0d053986a9272501d12d52c0d5dbfc6b011aecc8fc</hash>
       </entry>
@@ -13470,7 +13530,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\PreWash0.c</file>
-         <hash>1e958a5daa62fd1fb9465a9b0ffa87cd087c997cb78a4908ae841a54f5c3ced8</hash>
+         <hash>023e2c23f7f5b34ffe0b81ac8d309d125a0171b72681f2976f65101853ffdffd</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\drawsurface\legato_widget_drawsurface_skin_classic.c</file>
@@ -13479,6 +13539,10 @@
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\rectangle\legato_widget_rectangle_skin_classic.c</file>
          <hash>97e7a1eff02f0e85dda8ca00c021fc0edb6dfbd45357bcf27765bf5a3a8e58da</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image17.c</file>
+         <hash>fd761c2efab7c42759780967dcf29f8c4cbce256ed8517ac65b76c778fb10993</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\instance\sha.h</file>
@@ -13498,11 +13562,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\sports_but_down.c</file>
-         <hash>04697b2633ec1818b1d9e3fc15ca8dc8f94155e008e01fbc8f19a8a9191eb64e</hash>
+         <hash>061cfb83641c1e64676c9253ebfd8a1df9f674f2e6a6dd927b6ccafef0586567</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Spin3.c</file>
-         <hash>421ab44368519881d08d5244981aeef2f4d52e551d788e52dce5efdffbbe5be6</hash>
+         <hash>9ea7d2f601670bd46a760c816ad56ac4c43efa4f8e811a2d1e3355686c8f55bf</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\medium_but_up.c</file>
@@ -13542,7 +13606,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\close.c</file>
-         <hash>c35ab7e0f673ce70813b8e05b8ebfb90731c3a50a8457ef9a2502c741a0bbc61</hash>
+         <hash>4a75eb05fb1fa0db43e82af7c31829d41a87f37728d8cf283490411e77e5d878</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\instance\flexcom7.h</file>
@@ -13551,6 +13615,10 @@
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\progressbar\legato_widget_progressbar.h</file>
          <hash>9e6a646cecd8c7b9ab0788a3054d502bf31b30fc8b1660d3ff8e9b42102fc5d7</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\r16.c</file>
+         <hash>81cf957047fa446715206af016efade3056940201726d1acc6b2141141aef491</hash>
       </entry>
       <entry>
          <file>..\src\packs\SAM9X60_DFP\instance\rtt.h</file>
@@ -13567,6 +13635,10 @@
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\touchtest\legato_widget_touchtest_skin_classic.c</file>
          <hash>756ba56f2b3e66e4581b102e8b7da5ac5c77e34f7f66613c366e2ed01a0db858</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\wool_cycle.c</file>
+         <hash>a470d0f26595be464f7d2836ff51836d9072343f9dc1614cca01c124540ae09a</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\widget\progressbar\legato_widget_progressbar.c</file>
@@ -13586,7 +13658,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\PreWash1.c</file>
-         <hash>8f2993dd526c54536bc846c2e1440424eb208eadd545cb3aca1577d04046592d</hash>
+         <hash>d85ef8746c10fd0b684d96f04a46874e1ccc4ae0ed016af592066fdab052e91f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image18.c</file>
+         <hash>17a474849db0fa0badfe1c7a011f2903cc8824450d783242732a757b4a15d6a1</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\warm_but_up.c</file>
@@ -13595,6 +13671,10 @@
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\peripheral\lcdc\plib_lcdc.c</file>
          <hash>abea7c9fd3f447d9fdcd0428c216dcd639beee368ae45ac2a07b08ee35783cfe</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Normal_cycle.c</file>
+         <hash>5491697da4b5c376b159be592559a43945be7cccb97ffb634552b1987def0d53</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\driver\controller\lcdc\drv_gfx_lcdc.c</file>
@@ -13677,6 +13757,10 @@
          <hash>a5c5ff81b38f6cecfa3d9dc044b4bd3eb5ba2880c40bab80cdb2f9b4a67c7d4a</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\r15.c</file>
+         <hash>28cf22d320280cef2019a4dea3d9bfce2c2c1eeee85710bc53e1b0dab16e7d84</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\string\legato_fixedstring.c</file>
          <hash>2b1a87a933a23159be8dc585c655ae1789cc0f57ea6011be60a9726471896ff5</hash>
       </entry>
@@ -13697,6 +13781,10 @@
          <hash>c7b5ec61ab603868bec7a5db1abe4ebe0a32acbd5a1aa2b90c75a1bea8fb38b3</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image15.c</file>
+         <hash>e38fcd63b1cd7c1705e2e79e2f3b30ceafad465f8d4522f01a06e3ae0075c06d</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\common\legato_rect.h</file>
          <hash>243b908a6395f350b2a5f700f91c181c392a65ed1eb993a2ba417df5777a390c</hash>
       </entry>
@@ -13714,11 +13802,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Spin1.c</file>
-         <hash>9f09b4a31ffbed600bb9e06bc4765919ab4f3167b61969c84012347733cfae6d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\xrinse_but_off.c</file>
-         <hash>b2bb13ad3a0bfa28529fe7bcd4d11204b94289c885f0469c96a281e693a3d88a</hash>
+         <hash>29d569efbcde20583792a1f090aacee133f7abf989a9717ee4e461e37f1568d7</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\driver\i2c\src\drv_i2c_local.h</file>
@@ -13777,6 +13861,10 @@
          <hash>6f78460236f215c3aff4a6458fbfc985ad6be2e9fed8b1edd818be8e6a301f69</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\r14.c</file>
+         <hash>608be554bda7da8ac6ed5c1689ffff22bcb41d1b6f88e810747ac399cca2ba15</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\SAM9X60_DFP\component\adc.h</file>
          <hash>4f740a4b2b8f0e864478614972dc4742433358aabf74cdbc0556aa37de6d7237</hash>
       </entry>
@@ -13817,12 +13905,16 @@
          <hash>547e4a5403f1c1fdd12f532117f0ef7a4b9f1112852bf340faaa2e30137f4d8e</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\image16.c</file>
+         <hash>2ffd8cffbea0a3f2bdf610a2e91df5682cb57215e3287435f6de4d5deb09f022</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\SAM9X60_DFP\instance\pwm.h</file>
          <hash>a8330c552e22c5b100793b34e43e93075d3177160c312436a16f30954745efad</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\definitions.h</file>
-         <hash>d9f79f0617bea326b66437aa2ffbbd6529579d0077b07424f4569207a7a51fef</hash>
+         <hash>5b2ac3dde4a46a992fdd484b9989d988f8269915ee6eefb07e25200eb1c6b573</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\system\int\sys_int.h</file>
@@ -13846,7 +13938,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\generated\image\Spin2.c</file>
-         <hash>046640c7e10ca94b98109d0bf9abe49d8d38d76ba05c4fc92a1cb26ba030fcdd</hash>
+         <hash>4bea78e3d91b0ae17c0275c613c6da73fe3f9abf6210a703eaee9dfaa895258f</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_wvga\gfx\legato\font\legato_rasterfont_liberationmono1.c</file>

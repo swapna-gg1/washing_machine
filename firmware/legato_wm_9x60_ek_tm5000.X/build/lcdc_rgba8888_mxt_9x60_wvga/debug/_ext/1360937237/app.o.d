@@ -162,8 +162,7 @@ build/lcdc_rgba8888_mxt_9x60_wvga/debug/_ext/1360937237/app.o: \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/le_gen_assets.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/screen/le_gen_screen_Screen0.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/rtt/plib_rtt.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/rtt/plib_rtt_common.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/bsp/bsp.h
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/rtt/plib_rtt_common.h
 
 ../src/app.h:
 
@@ -492,5 +491,3 @@ build/lcdc_rgba8888_mxt_9x60_wvga/debug/_ext/1360937237/app.o: \
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/rtt/plib_rtt.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/rtt/plib_rtt_common.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/bsp/bsp.h:

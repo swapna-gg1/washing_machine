@@ -148,15 +148,15 @@ extern "C" {
 // renderer configuration
 //#define LE_VSYNC_STALL
 
-#define LE_LAYER_COUNT                     4
+#define LE_LAYER_COUNT                     8
 
 #define LE_WIDGET_MAX_EVENT_FILTERS        2
 
 // renderer config
 #define LE_ALPHA_BLENDING_ENABLED          1
 #define LE_SCRATCH_BUFFER_COUNT            1
-#define LE_SCRATCH_BUFFER_SIZE_KB          256
-#define LE_SCRATCH_BUFFER_PADDING          1
+#define LE_SCRATCH_BUFFER_SIZE_KB          2256
+#define LE_SCRATCH_BUFFER_PADDING          0
 #define LE_SCRATCH_BIG_ENDIAN              0
 #define LE_USE_ARC_SCAN_FILL               1
 #define LE_ARC_SMOOTH_EDGE                 LE_FALSE

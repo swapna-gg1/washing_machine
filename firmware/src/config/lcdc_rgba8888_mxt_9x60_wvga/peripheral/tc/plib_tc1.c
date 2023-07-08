@@ -74,7 +74,7 @@ void TC1_CH0_TimerInitialize(void)
     TC1_REGS->TC_CHANNEL[0].TC_CMR =  TC_CMR_WAVEFORM_WAVSEL_UP_RC | TC_CMR_WAVE_Msk ;
 
     /* write period */
-    TC1_REGS->TC_CHANNEL[0].TC_RC = 20000000U;
+    TC1_REGS->TC_CHANNEL[0].TC_RC = 80000U;
 
 
     /* enable interrupt */
