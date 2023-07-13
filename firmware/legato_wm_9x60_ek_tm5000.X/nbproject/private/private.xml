@@ -20,10 +20,8 @@
             <file>file:/C:/Users/c40450/HarmonyProjects/washing_machine_ek/firmware/src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/tc/plib_tc0.c</file>
             <file>file:/C:/Users/c40450/HarmonyProjects/washing_machine_ek/firmware/src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/driver/controller/lcdc/drv_gfx_lcdc.c</file>
             <file>file:/C:/Users/c40450/HarmonyProjects/washing_machine_ek/firmware/src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/canvas/gfx_canvas.h</file>
-            <file>file:/C:/Users/c40450/HarmonyProjects/washing_machine_ek/firmware/src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/image/legato_image.h</file>
-            <file>file:/C:/Users/c40450/HarmonyProjects/washing_machine_ek/firmware/src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/le_gen_init.h</file>
-            <file>file:/C:/Users/c40450/HarmonyProjects/washing_machine_ek/firmware/src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/legato.h</file>
             <file>file:/C:/Users/c40450/HarmonyProjects/washing_machine_ek/firmware/src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/widget/button/legato_widget_button.h</file>
+            <file>file:/C:/Users/c40450/HarmonyProjects/washing_machine_ek/firmware/src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/tc/plib_tc1.c</file>
         </group>
     </open-files>
 </project-private>
