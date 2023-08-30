@@ -117,9 +117,10 @@ build/lcdc_rgba8888_mxt_9x60_wvga/debug/_ext/1360937237/app.o: \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/device_cache.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/mmu/plib_mmu.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/toolchain_specifics.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/pio/plib_pio.h \
+ ../src/config/lcdc_rgba8888_mxt_9x60_wvga/device.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/tc/plib_tc0.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/tc/plib_tc_common.h \
- ../src/config/lcdc_rgba8888_mxt_9x60_wvga/device.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/tc/plib_tc1.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/canvas/gfx_canvas_api.h \
  ../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/driver/gfx_driver.h \
@@ -400,11 +401,13 @@ build/lcdc_rgba8888_mxt_9x60_wvga/debug/_ext/1360937237/app.o: \
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/toolchain_specifics.h:
 
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/pio/plib_pio.h:
+
+../src/config/lcdc_rgba8888_mxt_9x60_wvga/device.h:
+
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/tc/plib_tc0.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/tc/plib_tc_common.h:
-
-../src/config/lcdc_rgba8888_mxt_9x60_wvga/device.h:
 
 ../src/config/lcdc_rgba8888_mxt_9x60_wvga/peripheral/tc/plib_tc1.h:
 

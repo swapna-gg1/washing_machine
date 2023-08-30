@@ -493,48 +493,23 @@
                 </logicalFolder>
                 <logicalFolder name="image" displayName="image" projectFiles="true">
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image5.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/low_but_up.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image6.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/sports_but_down.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/warm_but_down.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/logoH.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image7.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/hot_but_down.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/high_but_down.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image8.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image1.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/start_but_up.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image2.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image10.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/close.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image3.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/wool_but_down.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image11.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/start_but_down.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image4.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image12.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/bed_but_down.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/warm_but_up.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image13.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/hot_but_up.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image14.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/normal_but_up.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/options_but_down.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/template.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image15.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/options_but_up.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/high_but_up.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/cold_but_up.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image16.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image9.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/medium_but_up.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/sports_but_up.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/medium_but_down.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/wool_but_up.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/bed_but_up.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/low_but_down.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/normal_but_down.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/cold_but_down.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image20.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image21.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/image22.c</itemPath>
@@ -551,7 +526,6 @@
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r2.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r1.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/round_exit.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/round_button.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r7.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/Wash0.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/Spin0.c</itemPath>
@@ -582,9 +556,39 @@
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r16.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r14.c</itemPath>
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/PreWash1.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/xrinse_but.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/prewash_but.c</itemPath>
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/sound_but.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/preWash.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/bedprog.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/loadSize.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/highSL.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/blue_but_up.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/lowSL.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/Sound.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/green_but_down.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/green_but_up.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/rinse.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/SoundOn.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/coldTemp.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/woolprog.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/normalprog.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/blue_but_down.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/warmTemp.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/hotTemp.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/SoundOff.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/sportsprog.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/mediumSL.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r18.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r17.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r19.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r26.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r25.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r22.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r21.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r24.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r23.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r20.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r_play.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/r_pause.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/image/pop_up.c</itemPath>
                 </logicalFolder>
                 <logicalFolder name="screen" displayName="screen" projectFiles="true">
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_wvga/gfx/legato/generated/screen/le_gen_screen_Screen0.c</itemPath>

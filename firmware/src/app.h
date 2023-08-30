@@ -71,6 +71,26 @@ enum buttonTracker{
     SLevel,
     Options,       
 };
+enum progMenuTracker{
+    pbClose,
+    pbOpen,
+};
+enum tempMenuTracker{
+    tbClose,
+    tbOpen,
+
+};
+enum soilMenuTracker{
+    sbClose,
+    sbOpen,
+
+};
+
+enum optionMenuTracker{
+    Close,
+    Open,
+    Closing,
+};
 
 typedef enum {
     SCREEN0=0,
@@ -82,8 +102,19 @@ typedef struct
     bool sound;
     bool xrinse;
     bool preWash;
+    bool loadSizeHigh;
   
 } LOAD_OPTIONS_STATUS;
+
+typedef struct
+{
+    bool prog;
+    bool temp;
+    bool slevel;
+    bool opts;
+    uint8_t activeCount;
+} MENUS_STATUS;
+
 
 // *****************************************************************************
 /* Application states
@@ -101,6 +132,7 @@ typedef enum
     /* Application's state machine's initial state. */
     APP_STATE_INIT=0,
     APP_STATE_SERVICE_TASKS,
+    APP_STATE_SCREEN2_POPUP,
     APP_STATE_SWITCH_SCREEN,
     /* TODO: Define states used by the application state machine. */
 
@@ -125,9 +157,6 @@ typedef struct
     /* The application's current state */
     APP_STATES state;
     CURRENT_SCREEN screen;
-
-  
-
 } APP_DATA;
 
 /*CANVAS ID*/

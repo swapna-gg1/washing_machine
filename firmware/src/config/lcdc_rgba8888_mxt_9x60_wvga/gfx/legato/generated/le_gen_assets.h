@@ -81,510 +81,6 @@ extern leImage template;
 
 /*********************************
  * Legato Image Asset
- * Name:   cold_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage cold_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   cold_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage cold_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   warm_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage warm_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   warm_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage warm_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   hot_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage hot_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   hot_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage hot_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   normal_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage normal_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   normal_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage normal_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   bed_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage bed_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   bed_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage bed_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   wool_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage wool_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   wool_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage wool_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   medium_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage medium_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   medium_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage medium_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   high_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage high_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   high_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage high_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   low_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage low_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   low_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage low_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   start_but_down
- * Size:   120x45 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage start_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   start_but_up
- * Size:   120x45 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage start_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   round_button
- * Size:   75x75 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage round_button;
-
-/*********************************
- * Legato Image Asset
- * Name:   round_exit
- * Size:   50x50 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage round_exit;
-
-/*********************************
- * Legato Image Asset
- * Name:   r1
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r1;
-
-/*********************************
- * Legato Image Asset
- * Name:   r2
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r2;
-
-/*********************************
- * Legato Image Asset
- * Name:   r3
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r3;
-
-/*********************************
- * Legato Image Asset
- * Name:   r4
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r4;
-
-/*********************************
- * Legato Image Asset
- * Name:   r5
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r5;
-
-/*********************************
- * Legato Image Asset
- * Name:   r6
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r6;
-
-/*********************************
- * Legato Image Asset
- * Name:   r7
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r7;
-
-/*********************************
- * Legato Image Asset
- * Name:   r8
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r8;
-
-/*********************************
- * Legato Image Asset
- * Name:   r9
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r9;
-
-/*********************************
- * Legato Image Asset
- * Name:   r10
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r10;
-
-/*********************************
- * Legato Image Asset
- * Name:   r11
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r11;
-
-/*********************************
- * Legato Image Asset
- * Name:   r12
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r12;
-
-/*********************************
- * Legato Image Asset
- * Name:   r13
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r13;
-
-/*********************************
- * Legato Image Asset
- * Name:   r14
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r14;
-
-/*********************************
- * Legato Image Asset
- * Name:   r15
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r15;
-
-/*********************************
- * Legato Image Asset
- * Name:   r16
- * Size:   265x245 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage r16;
-
-/*********************************
- * Legato Image Asset
- * Name:   Bedding_cycle
- * Size:   300x480 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Bedding_cycle;
-
-/*********************************
- * Legato Image Asset
- * Name:   Normal_cycle
- * Size:   300x480 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Normal_cycle;
-
-/*********************************
- * Legato Image Asset
- * Name:   sports_cycle
- * Size:   300x480 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage sports_cycle;
-
-/*********************************
- * Legato Image Asset
- * Name:   wool_cycle
- * Size:   300x480 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage wool_cycle;
-
-/*********************************
- * Legato Image Asset
- * Name:   sports_but_down
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage sports_but_down;
-
-/*********************************
- * Legato Image Asset
- * Name:   sports_but_up
- * Size:   120x39 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage sports_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   Rinse0
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Rinse0;
-
-/*********************************
- * Legato Image Asset
- * Name:   Rinse1
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Rinse1;
-
-/*********************************
- * Legato Image Asset
- * Name:   Rinse2
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Rinse2;
-
-/*********************************
- * Legato Image Asset
- * Name:   Rinse3
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Rinse3;
-
-/*********************************
- * Legato Image Asset
- * Name:   Spin0
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Spin0;
-
-/*********************************
- * Legato Image Asset
- * Name:   Spin1
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Spin1;
-
-/*********************************
- * Legato Image Asset
- * Name:   Spin2
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Spin2;
-
-/*********************************
- * Legato Image Asset
- * Name:   Spin3
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Spin3;
-
-/*********************************
- * Legato Image Asset
- * Name:   Wash0
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Wash0;
-
-/*********************************
- * Legato Image Asset
- * Name:   Wash1
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Wash1;
-
-/*********************************
- * Legato Image Asset
- * Name:   Wash2
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Wash2;
-
-/*********************************
- * Legato Image Asset
- * Name:   Wash3
- * Size:   400x400 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage Wash3;
-
-/*********************************
- * Legato Image Asset
  * Name:   image1
  * Size:   800x180 pixels
  * Type:   RGB Data
@@ -846,57 +342,597 @@ extern leImage PreWash3;
 
 /*********************************
  * Legato Image Asset
- * Name:   options_but_down
- * Size:   140x40 pixels
+ * Name:   Rinse0
+ * Size:   400x400 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage options_but_down;
+extern leImage Rinse0;
 
 /*********************************
  * Legato Image Asset
- * Name:   options_but_up
- * Size:   140x40 pixels
- * Type:   RGB Data
- * Format: RGB_888
- ***********************************/
-extern leImage options_but_up;
-
-/*********************************
- * Legato Image Asset
- * Name:   close
- * Size:   140x50 pixels
+ * Name:   Rinse1
+ * Size:   400x400 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage close;
+extern leImage Rinse1;
 
 /*********************************
  * Legato Image Asset
- * Name:   xrinse_but
- * Size:   140x50 pixels
+ * Name:   Rinse2
+ * Size:   400x400 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage xrinse_but;
+extern leImage Rinse2;
 
 /*********************************
  * Legato Image Asset
- * Name:   sound_but
- * Size:   140x50 pixels
+ * Name:   Rinse3
+ * Size:   400x400 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage sound_but;
+extern leImage Rinse3;
 
 /*********************************
  * Legato Image Asset
- * Name:   prewash_but
- * Size:   140x50 pixels
+ * Name:   Spin0
+ * Size:   400x400 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage prewash_but;
+extern leImage Spin0;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Spin1
+ * Size:   400x400 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Spin1;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Spin2
+ * Size:   400x400 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Spin2;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Spin3
+ * Size:   400x400 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Spin3;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Wash0
+ * Size:   400x400 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Wash0;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Wash1
+ * Size:   400x400 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Wash1;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Wash2
+ * Size:   400x400 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Wash2;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Wash3
+ * Size:   400x400 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Wash3;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r1
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r1;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r2
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r2;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r3
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r3;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r4
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r4;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r5
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r5;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r6
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r6;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r7
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r7;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r8
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r8;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r9
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r9;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r10
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r10;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r11
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r11;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r12
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r12;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r13
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r13;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r14
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r14;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r15
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r15;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r16
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r16;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   normalprog
+ * Size:   30x27 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage normalprog;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   sportsprog
+ * Size:   30x29 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage sportsprog;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   bedprog
+ * Size:   30x22 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage bedprog;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   woolprog
+ * Size:   24x30 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage woolprog;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   warmTemp
+ * Size:   29x30 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage warmTemp;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   coldTemp
+ * Size:   29x30 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage coldTemp;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   hotTemp
+ * Size:   29x30 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage hotTemp;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   mediumSL
+ * Size:   30x27 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage mediumSL;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   lowSL
+ * Size:   30x27 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage lowSL;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   highSL
+ * Size:   30x27 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage highSL;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   SoundOn
+ * Size:   30x26 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage SoundOn;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Sound
+ * Size:   20x25 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Sound;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   rinse
+ * Size:   28x24 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage rinse;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   preWash
+ * Size:   28x23 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage preWash;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   loadSize
+ * Size:   23x27 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage loadSize;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   SoundOff
+ * Size:   29x25 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage SoundOff;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Normal_cycle
+ * Size:   300x480 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Normal_cycle;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   Bedding_cycle
+ * Size:   300x480 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage Bedding_cycle;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   wool_cycle
+ * Size:   300x480 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage wool_cycle;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   sports_cycle
+ * Size:   300x480 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage sports_cycle;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   round_exit
+ * Size:   50x50 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage round_exit;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   green_but_down
+ * Size:   120x50 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage green_but_down;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   green_but_up
+ * Size:   120x50 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage green_but_up;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   blue_but_down
+ * Size:   120x50 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage blue_but_down;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   blue_but_up
+ * Size:   120x50 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage blue_but_up;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r17
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r17;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r18
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r18;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r19
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r19;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r20
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r20;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r21
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r21;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r22
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r22;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r23
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r23;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r24
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r24;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r25
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r25;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r26
+ * Size:   265x245 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r26;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r_pause
+ * Size:   50x50 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r_pause;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   r_play
+ * Size:   50x50 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage r_play;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   pop_up
+ * Size:   300x100 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage pop_up;
 
 /*****************************************************************************
  * Legato Graphics Font Assets
@@ -908,28 +944,16 @@ extern leImage prewash_but;
  * Baseline:     22
  * Style:        Antialias
  * Glyph Count:  95
- * Range Count:  6
+ * Range Count:  9
  * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont NotoSans_Bold;
 
 /*********************************
  * Legato Font Asset
- * Name:         NotoSans_Medium
- * Height:       21
- * Baseline:     13
- * Style:        Antialias
- * Glyph Count:  95
- * Range Count:  11
- * Glyph Ranges: 0x20-0x7E
-***********************************/
-extern leRasterFont NotoSans_Medium;
-
-/*********************************
- * Legato Font Asset
  * Name:         buttonFont
  * Height:       21
- * Baseline:     13
+ * Baseline:     14
  * Style:        Antialias
  * Glyph Count:  96
  * Range Count:  13
@@ -942,7 +966,7 @@ extern leRasterFont buttonFont;
  * Legato String Table
  * Encoding        ASCII
  * Language Count: 1
- * String Count:   11
+ * String Count:   24
  *****************************************************************************/
 
 // language IDs
@@ -950,32 +974,58 @@ extern leRasterFont buttonFont;
 
 // string IDs
 #define stringID_soil    0
-#define stringID_close    1
-#define stringID_soundOff    2
-#define stringID_options    3
-#define stringID_soundOn    4
-#define stringID_program    5
-#define stringID_preWashOn    6
-#define stringID_preWashOff    7
-#define stringID_temperature    8
-#define stringID_xrinseOn    9
-#define stringID_xrinseOff    10
+#define stringID_cycle_complete    1
+#define stringID_WarmTemp    2
+#define stringID_XtraRinseOn    3
+#define stringID_BedProg    4
+#define stringID_SoundOn    5
+#define stringID_WoolProg    6
+#define stringID_HotTemp    7
+#define stringID_LoadHigh    8
+#define stringID_preWashOff    9
+#define stringID_preWashOn    10
+#define stringID_SportsProg    11
+#define stringID_NormalProg    12
+#define stringID_Start    13
+#define stringID_ColdTemp    14
+#define stringID_options    15
+#define stringID_SoundOff    16
+#define stringID_HighSoilLevel    17
+#define stringID_MediumSoilLevel    18
+#define stringID_program    19
+#define stringID_temperature    20
+#define stringID_XtraRinseOff    21
+#define stringID_LowSoilLevel    22
+#define stringID_LoadLow    23
 
 extern const leStringTable stringTable;
 
 
 // string list
 extern leTableString string_soil;
-extern leTableString string_close;
-extern leTableString string_soundOff;
-extern leTableString string_options;
-extern leTableString string_soundOn;
-extern leTableString string_program;
-extern leTableString string_preWashOn;
+extern leTableString string_cycle_complete;
+extern leTableString string_WarmTemp;
+extern leTableString string_XtraRinseOn;
+extern leTableString string_BedProg;
+extern leTableString string_SoundOn;
+extern leTableString string_WoolProg;
+extern leTableString string_HotTemp;
+extern leTableString string_LoadHigh;
 extern leTableString string_preWashOff;
+extern leTableString string_preWashOn;
+extern leTableString string_SportsProg;
+extern leTableString string_NormalProg;
+extern leTableString string_Start;
+extern leTableString string_ColdTemp;
+extern leTableString string_options;
+extern leTableString string_SoundOff;
+extern leTableString string_HighSoilLevel;
+extern leTableString string_MediumSoilLevel;
+extern leTableString string_program;
 extern leTableString string_temperature;
-extern leTableString string_xrinseOn;
-extern leTableString string_xrinseOff;
+extern leTableString string_XtraRinseOff;
+extern leTableString string_LowSoilLevel;
+extern leTableString string_LoadLow;
 
 void initializeStrings(void);
 //DOM-IGNORE-BEGIN

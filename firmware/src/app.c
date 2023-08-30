@@ -28,6 +28,7 @@
 // *****************************************************************************
 
 #include "app.h"
+#include "peripheral/pio/plib_pio.h"
 #include "peripheral/tc/plib_tc0.h"
 #include "peripheral/tc/plib_tc1.h"
 #include "gfx/canvas/gfx_canvas_api.h"
@@ -40,7 +41,8 @@
 // Section: Global Data Definitions
 // *****************************************************************************
 // *****************************************************************************
-
+#define MAX_MENUS 4
+#define MIN_MENUS 0
 // *****************************************************************************
 /* Application Data
 
@@ -58,10 +60,11 @@
 
 APP_DATA appData;
 
-
+MENUS_STATUS menu_tracker;
 LOAD_OPTIONS_STATUS load_options;
+leWidgetEventFilter popup_filter;
 leImage * waveImgAnim[25];
-leImage * RoundImgAnim[16];
+leImage * RoundImgAnim[26];
 static uint8_t prev_min, prev_sec, sec=0, min=0, hr=10;
 static uint32_t prev_tick, tick = 0;
 static uint8_t progress_cnt=0;
@@ -71,9 +74,12 @@ bool am_b = true;
 
 bool colon_visi = true;
 bool menu_anime_on = false;
-bool menu_expand = false;
 bool roundV_paused = false;
 bool update_progWheel = false;
+/*Bool to track button state:Options or Sound*/
+bool button_Options = true;
+/*Bool to track if pop-up in 2nd screen is shown*/
+bool popUp = false;
 //C character buffer
 static char cCharBuffer[18] = {0};
 const char colonCharBuffer[] = {":"};
@@ -87,6 +93,10 @@ static leChar legatoColonCharBuffer[2] = {0};
 static leFixedString timeString;
 static leFixedString colonString;
 enum buttonTracker currentButtonPressed;
+enum progMenuTracker progMenuTracking;
+enum tempMenuTracker tempMenuTracking;
+enum soilMenuTracker soilMenuTracking;
+enum optionMenuTracker optionMenuTracking;
 
 Prog_load defaultProgramList[4]= {Normal, Sports, Wool, Bedding};
 
@@ -113,6 +123,37 @@ void editProgramList(uint8_t selProg);
 // Section: Application Callback Functions
 // *****************************************************************************
 // *****************************************************************************
+/*leBool popup_Callback(leWidget* target, leWidgetEvent* evt, void* data)
+{    
+    if(evt->id == LE_EVENT_TOUCH_DOWN)
+    {
+        if(appData.state == APP_STATE_SCREEN2_POPUP)
+            appData.state = APP_STATE_SWITCH_SCREEN;
+    }
+    evt->owner = target;
+    evt->accepted = LE_TRUE;
+    
+    return LE_FALSE;
+}*/
+
+leBool popup_Callback(leWidget* target, leWidgetEvent* evt, void* data)
+{  
+   switch(evt->id)
+   {
+       case LE_EVENT_TOUCH_DOWN:
+       case LE_EVENT_TOUCH_MOVE:
+       {
+           evt->owner = target;
+           evt->accepted = LE_TRUE;
+           if(appData.state == APP_STATE_SCREEN2_POPUP)
+                appData.state = APP_STATE_SWITCH_SCREEN;
+           break;
+       }
+       default:
+           break;
+   }
+   return LE_FALSE;
+}
 void event_Screen0_ButtonWidget_exit_OnReleased(leButtonWidget* btn)
 {
     /* Show Screen 0 */
@@ -123,10 +164,15 @@ void event_Screen0_ButtonWidget_pp_OnReleased(leButtonWidget* btn)
 {
     if(roundV_paused)
     {
+        Screen0_ButtonWidget_pp->fn->setPressedImage(Screen0_ButtonWidget_pp, (leImage*)&r_pause);
+        Screen0_ButtonWidget_pp->fn->setReleasedImage(Screen0_ButtonWidget_pp, (leImage*)&r_pause);
+
         roundV_paused = false;
         TC0_CH1_TimerStart();
     }else
     {
+        Screen0_ButtonWidget_pp->fn->setPressedImage(Screen0_ButtonWidget_pp, (leImage*)&r_play);
+        Screen0_ButtonWidget_pp->fn->setReleasedImage(Screen0_ButtonWidget_pp, (leImage*)&r_play);
         roundV_paused = true;
         TC0_CH1_TimerStop();
     }
@@ -136,238 +182,254 @@ void event_Screen0_ButtonWidget_p1_OnReleased(leButtonWidget* btn)
 {
     currentButtonPressed = Program;
     menu_anime_on = true;
-    if(menu_expand ==false){
-        menu_expand = true;
+    if(progMenuTracking == pbClose){
+        progMenuTracking = pbOpen;
         Screen0_RectangleWidget_background_prog->fn->setVisible(Screen0_RectangleWidget_background_prog, LE_TRUE);
+        menu_tracker.prog = true;
+        if (menu_tracker.activeCount < MAX_MENUS)
+            menu_tracker.activeCount++;
         TC0_CH1_TimerStop();
         TC1_CH0_TimerStart();
+        
     }
-    else{
-        menu_expand = false;
+    else{      
+        progMenuTracking = pbClose;
         hideAllProgramButtons();
         doneProgramAnime();
-        //TC1_CH0_TimerStart();
+        
     }
+    
 }
      
 void event_Screen0_ButtonWidget_p2_OnReleased(leButtonWidget* btn)
 {
-    leImage* but_p;
-    leImage* but_r;
+    leString* p1_str;
+    leImage* p1_img;
     currentButtonPressed = Program;
     menu_anime_on = true;
-    menu_expand = false;
+    progMenuTracking = pbClose;
     hideAllProgramButtons();
-    but_p = Screen0_ButtonWidget_p1->fn->getPressedImage(Screen0_ButtonWidget_p1);
-    but_r = Screen0_ButtonWidget_p1->fn->getReleasedImage(Screen0_ButtonWidget_p1);
-
+    p1_str = Screen0_Labelbuttonp1->fn->getString(Screen0_Labelbuttonp1);
+    p1_img = Screen0_Imagebuttonp1->fn->getImage(Screen0_Imagebuttonp1);       
+    
     //update program button
     editProgramList(1); //2nd array element
     
-    //TC1_CH0_TimerStart();
     doneProgramAnime();
-    Screen0_ButtonWidget_p2->fn->setPressedImage(Screen0_ButtonWidget_p2, but_p);
-    Screen0_ButtonWidget_p2->fn->setReleasedImage(Screen0_ButtonWidget_p2, but_r);
+    Screen0_Labelbuttonp2->fn->setString(Screen0_Labelbuttonp2, p1_str);
+    Screen0_Imagebuttonp2->fn->setImage(Screen0_Imagebuttonp2, p1_img);
+    
 }
 
 void event_Screen0_ButtonWidget_p3_OnReleased(leButtonWidget* btn)
 {
-    leImage* but_p;
-    leImage* but_r;
+    leString* p1_str;
+    leImage* p1_img;
     currentButtonPressed = Program;
     menu_anime_on = true;
-    menu_expand = false;
+    progMenuTracking = pbClose;
     hideAllProgramButtons();
-    but_p = Screen0_ButtonWidget_p1->fn->getPressedImage(Screen0_ButtonWidget_p1);
-    but_r = Screen0_ButtonWidget_p1->fn->getReleasedImage(Screen0_ButtonWidget_p1);
-
+    p1_str = Screen0_Labelbuttonp1->fn->getString(Screen0_Labelbuttonp1);
+    p1_img = Screen0_Imagebuttonp1->fn->getImage(Screen0_Imagebuttonp1);       
+   
     //update program button
     editProgramList(2); //3rd array element
-    //TC1_CH0_TimerStart();
     doneProgramAnime();
-    Screen0_ButtonWidget_p3->fn->setPressedImage(Screen0_ButtonWidget_p3, but_p);
-    Screen0_ButtonWidget_p3->fn->setReleasedImage(Screen0_ButtonWidget_p3, but_r);
+    Screen0_Labelbuttonp3->fn->setString(Screen0_Labelbuttonp3, p1_str);
+    Screen0_Imagebuttonp3->fn->setImage(Screen0_Imagebuttonp3, p1_img);
+    
 }
 
 void event_Screen0_ButtonWidget_p4_OnReleased(leButtonWidget* btn)
 {
-    leImage* but_p;
-    leImage* but_r;
+    leString* p1_str;
+    leImage* p1_img;
     
     currentButtonPressed = Program;
     menu_anime_on = true;
-    menu_expand = false;
+    progMenuTracking = pbClose;
     hideAllProgramButtons();
-    but_p = Screen0_ButtonWidget_p1->fn->getPressedImage(Screen0_ButtonWidget_p1);
-    but_r = Screen0_ButtonWidget_p1->fn->getReleasedImage(Screen0_ButtonWidget_p1);
-
+    p1_str = Screen0_Labelbuttonp1->fn->getString(Screen0_Labelbuttonp1);
+    p1_img = Screen0_Imagebuttonp1->fn->getImage(Screen0_Imagebuttonp1);       
+   
     //update program button
     editProgramList(3);//4th array element
-    //TC1_CH0_TimerStart();
     doneProgramAnime();
-    Screen0_ButtonWidget_p4->fn->setPressedImage(Screen0_ButtonWidget_p4, but_p);
-    Screen0_ButtonWidget_p4->fn->setReleasedImage(Screen0_ButtonWidget_p4, but_r);
+    Screen0_Labelbuttonp4->fn->setString(Screen0_Labelbuttonp4, p1_str);
+    Screen0_Imagebuttonp4->fn->setImage(Screen0_Imagebuttonp4, p1_img);
+    
 }
 
 void event_Screen0_ButtonWidget_t1_OnReleased(leButtonWidget* btn)
 {
     currentButtonPressed = Temperature;
     menu_anime_on = true;
-    if(menu_expand ==false){
-        menu_expand = true;
+    if(tempMenuTracking == tbClose){
+        tempMenuTracking = tbOpen;
         Screen0_RectangleWidget_backgroundTemp->fn->setVisible(Screen0_RectangleWidget_backgroundTemp, LE_TRUE);
+        menu_tracker.temp = true;
+        if (menu_tracker.activeCount < MAX_MENUS)
+            menu_tracker.activeCount++;
         TC0_CH1_TimerStop();   
         TC1_CH0_TimerStart();
     }
     else{
-        menu_expand = false;
+        tempMenuTracking = tbClose;
         hideAllTempButtons();
         doneTempAnime();
     }
-    //TC1_CH0_TimerStart();
 }
 
 void event_Screen0_ButtonWidget_t2_OnReleased(leButtonWidget* btn)
 {
-    leImage* but_t1p;
-    leImage* but_t2p;
-    leImage* but_t1r;
-    leImage* but_t2r;
+    leImage* t1_img;
+    leImage* t2_img;
+    
+    leString* t1_str;
+    leString* t2_str;
     currentButtonPressed = Temperature;
     menu_anime_on = true;
-    menu_expand = false;
-    but_t1p = Screen0_ButtonWidget_t1->fn->getPressedImage(Screen0_ButtonWidget_t1);
-    but_t1r = Screen0_ButtonWidget_t1->fn->getReleasedImage(Screen0_ButtonWidget_t1);
+    tempMenuTracking = tbClose;
+    t1_img = Screen0_Imagebuttont1->fn->getImage(Screen0_Imagebuttont1);
+    t1_str = Screen0_Labelbuttont1->fn->getString(Screen0_Labelbuttont1);
 
-    but_t2p = Screen0_ButtonWidget_t2->fn->getPressedImage(Screen0_ButtonWidget_t2);
-    but_t2r = Screen0_ButtonWidget_t2->fn->getReleasedImage(Screen0_ButtonWidget_t2);
-    
-    Screen0_ButtonWidget_t2->fn->setPressedImage(Screen0_ButtonWidget_t2, but_t1p);
-    Screen0_ButtonWidget_t2->fn->setReleasedImage(Screen0_ButtonWidget_t2, but_t1r);
+    t2_img = Screen0_Imagebuttont2->fn->getImage(Screen0_Imagebuttont2);
+    t2_str = Screen0_Labelbuttont2->fn->getString(Screen0_Labelbuttont2);
 
+    Screen0_Imagebuttont2->fn->setImage(Screen0_Imagebuttont2, t1_img);
+    Screen0_Labelbuttont2->fn->setString(Screen0_Labelbuttont2, t1_str);
     hideAllTempButtons();
     doneTempAnime();
-    //TC1_CH0_TimerStart();
     
-    Screen0_ButtonWidget_t1->fn->setPressedImage(Screen0_ButtonWidget_t1, but_t2p);
-    Screen0_ButtonWidget_t1->fn->setReleasedImage(Screen0_ButtonWidget_t1, but_t2r);
-
+    Screen0_Imagebuttont1->fn->setImage(Screen0_Imagebuttont1, t2_img);
+    Screen0_Labelbuttont1->fn->setString(Screen0_Labelbuttont1, t2_str);
 }
 
 void event_Screen0_ButtonWidget_t3_OnReleased(leButtonWidget* btn)
 {
-    leImage* but_t1p;
-    leImage* but_t3p;
-    leImage* but_t1r;
-    leImage* but_t3r;
-    but_t1p = Screen0_ButtonWidget_t1->fn->getPressedImage(Screen0_ButtonWidget_t1);
-    but_t1r = Screen0_ButtonWidget_t1->fn->getReleasedImage(Screen0_ButtonWidget_t1);
-
+    leImage* t1_img;
+    leImage* t3_img;
+    
+    leString* t1_str;
+    leString* t3_str;
+    
     currentButtonPressed = Temperature;
     menu_anime_on = true;
-    menu_expand = false;
-    but_t3p = Screen0_ButtonWidget_t3->fn->getPressedImage(Screen0_ButtonWidget_t3);
-    but_t3r = Screen0_ButtonWidget_t3->fn->getReleasedImage(Screen0_ButtonWidget_t3);
-    
-    Screen0_ButtonWidget_t3->fn->setPressedImage(Screen0_ButtonWidget_t3, but_t1p);
-    Screen0_ButtonWidget_t3->fn->setReleasedImage(Screen0_ButtonWidget_t3, but_t1r);
+    tempMenuTracking = tbClose;
+    t1_img = Screen0_Imagebuttont1->fn->getImage(Screen0_Imagebuttont1);
+    t1_str = Screen0_Labelbuttont1->fn->getString(Screen0_Labelbuttont1);
 
+    t3_img = Screen0_Imagebuttont2->fn->getImage(Screen0_Imagebuttont3);
+    t3_str = Screen0_Labelbuttont2->fn->getString(Screen0_Labelbuttont3);
+
+    Screen0_Imagebuttont3->fn->setImage(Screen0_Imagebuttont3, t1_img);
+    Screen0_Labelbuttont3->fn->setString(Screen0_Labelbuttont3, t1_str);
+    
     hideAllTempButtons();
     doneTempAnime();
-    //TC1_CH0_TimerStart();
-    Screen0_ButtonWidget_t1->fn->setPressedImage(Screen0_ButtonWidget_t1, but_t3p);
-    Screen0_ButtonWidget_t1->fn->setReleasedImage(Screen0_ButtonWidget_t1, but_t3r);
-
+    Screen0_Imagebuttont1->fn->setImage(Screen0_Imagebuttont1, t3_img);
+    Screen0_Labelbuttont1->fn->setString(Screen0_Labelbuttont1, t3_str);
 }
 
 void event_Screen0_ButtonWidget_sl1_OnReleased(leButtonWidget* btn)
 {
     currentButtonPressed = SLevel;
     menu_anime_on = true;
-    if(menu_expand ==false){
-        menu_expand = true;
+    if(soilMenuTracking == sbClose){
+        soilMenuTracking = sbOpen;
         Screen0_RectangleWidget_backgroundSLevel->fn->setVisible(Screen0_RectangleWidget_backgroundSLevel, LE_TRUE);
+        menu_tracker.slevel = true;
+        if (menu_tracker.activeCount < MAX_MENUS)
+            menu_tracker.activeCount++;
         TC0_CH1_TimerStop();
         TC1_CH0_TimerStart();
     } else {
-        menu_expand = false;
+        soilMenuTracking = sbClose;
         hideAllSoilButtons();
         doneSoilAnime();
-        //TC1_CH0_TimerStart();
     }
 }
 void event_Screen0_ButtonWidget_sl2_OnReleased(leButtonWidget* btn)
 {
-    leImage* but_sl1p;
-    leImage* but_sl2p;
-    leImage* but_sl1r;
-    leImage* but_sl2r;
-    but_sl1p = Screen0_ButtonWidget_sl1->fn->getPressedImage(Screen0_ButtonWidget_sl1);
-    but_sl1r = Screen0_ButtonWidget_sl1->fn->getReleasedImage(Screen0_ButtonWidget_sl1);
-    but_sl2p = Screen0_ButtonWidget_sl2->fn->getPressedImage(Screen0_ButtonWidget_sl2);
-    but_sl2r = Screen0_ButtonWidget_sl2->fn->getReleasedImage(Screen0_ButtonWidget_sl2);
+    leImage* sl1_img;
+    leImage* sl2_img;
     
-    Screen0_ButtonWidget_sl2->fn->setPressedImage(Screen0_ButtonWidget_sl2, but_sl1p);
-    Screen0_ButtonWidget_sl2->fn->setReleasedImage(Screen0_ButtonWidget_sl2, but_sl1r);
+    leString* sl1_str;
+    leString* sl2_str;
+    sl1_img = Screen0_Imagebuttonsl1->fn->getImage(Screen0_Imagebuttonsl1);
+    sl1_str = Screen0_Labelbutonsl1->fn->getString(Screen0_Labelbutonsl1);
+
+    sl2_img = Screen0_Imagebuttonsl2->fn->getImage(Screen0_Imagebuttonsl2);
+    sl2_str = Screen0_Labelbuttonsl2->fn->getString(Screen0_Labelbuttonsl2);
+
+    Screen0_Imagebuttonsl2->fn->setImage(Screen0_Imagebuttonsl2, sl1_img);
+    Screen0_Labelbuttonsl2->fn->setString(Screen0_Labelbuttonsl2, sl1_str);
+    
     currentButtonPressed = SLevel;
     menu_anime_on = true;
-    menu_expand = false;
+    soilMenuTracking = sbClose;
     hideAllSoilButtons();
     doneSoilAnime();
-    //TC1_CH0_TimerStart();
         
-    Screen0_ButtonWidget_sl1->fn->setPressedImage(Screen0_ButtonWidget_sl1, but_sl2p);
-    Screen0_ButtonWidget_sl1->fn->setReleasedImage(Screen0_ButtonWidget_sl1, but_sl2r);
-}
-void event_Screen0_ButtonWidget_sl3_OnReleased(leButtonWidget* btn)
-{
-    leImage* but_sl1p;
-    leImage* but_sl3p;
-    leImage* but_sl1r;
-    leImage* but_sl3r;
-    but_sl1p = Screen0_ButtonWidget_sl1->fn->getPressedImage(Screen0_ButtonWidget_sl1);
-    but_sl1r = Screen0_ButtonWidget_sl1->fn->getReleasedImage(Screen0_ButtonWidget_sl1);
-    but_sl3p = Screen0_ButtonWidget_sl3->fn->getPressedImage(Screen0_ButtonWidget_sl3);
-    but_sl3r = Screen0_ButtonWidget_sl3->fn->getReleasedImage(Screen0_ButtonWidget_sl3);
-    
-    Screen0_ButtonWidget_sl3->fn->setPressedImage(Screen0_ButtonWidget_sl3, but_sl1p);
-    Screen0_ButtonWidget_sl3->fn->setReleasedImage(Screen0_ButtonWidget_sl3, but_sl1r);
-    currentButtonPressed = SLevel;
-    menu_anime_on = true;
-    menu_expand = false;
-    hideAllSoilButtons();
-    doneSoilAnime();
-    //TC1_CH0_TimerStart();
-    
-    Screen0_ButtonWidget_sl1->fn->setPressedImage(Screen0_ButtonWidget_sl1, but_sl3p);
-    Screen0_ButtonWidget_sl1->fn->setReleasedImage(Screen0_ButtonWidget_sl1, but_sl3r);
+    Screen0_Imagebuttonsl1->fn->setImage(Screen0_Imagebuttonsl1, sl2_img);
+    Screen0_Labelbutonsl1->fn->setString(Screen0_Labelbutonsl1, sl2_str);
 }
 
+void event_Screen0_ButtonWidget_sl3_OnReleased(leButtonWidget* btn)
+{
+    leImage* sl1_img;
+    leImage* sl3_img;
+    
+    leString* sl1_str;
+    leString* sl3_str;
+    sl1_img = Screen0_Imagebuttonsl1->fn->getImage(Screen0_Imagebuttonsl1);
+    sl1_str = Screen0_Labelbutonsl1->fn->getString(Screen0_Labelbutonsl1);
+
+    sl3_img = Screen0_Imagebuttonsl3->fn->getImage(Screen0_Imagebuttonsl3);
+    sl3_str = Screen0_Labelbuttonsl3->fn->getString(Screen0_Labelbuttonsl3);
+
+    Screen0_Imagebuttonsl3->fn->setImage(Screen0_Imagebuttonsl3, sl1_img);
+    Screen0_Labelbuttonsl3->fn->setString(Screen0_Labelbuttonsl3, sl1_str);
+    
+    currentButtonPressed = SLevel;
+    menu_anime_on = true;
+    soilMenuTracking = sbClose;
+    hideAllSoilButtons();
+    doneSoilAnime();
+    
+    Screen0_Imagebuttonsl1->fn->setImage(Screen0_Imagebuttonsl1, sl3_img);
+    Screen0_Labelbutonsl1->fn->setString(Screen0_Labelbutonsl1, sl3_str);
+}
+/*
 void event_Screen0_ButtonWidget_Opt_sound_OnReleased(leButtonWidget* btn)
 {
+    optionMenuTracking = Open;
     if(load_options.sound == true)
     {
         load_options.sound = false;
-        Screen0_ButtonWidget_Opt_sound->fn->setString(Screen0_ButtonWidget_Opt_sound, (leString*)&string_soundOff);
+        Screen0_LabelOptSound->fn->setString(Screen0_LabelOptSound, (leString*)&string_SoundOff);
+        Screen0_ImageOptSound->fn->setImage(Screen0_ImageOptSound, (leImage*)&SoundOff);
    
     }
     else
     {
-        Screen0_ButtonWidget_Opt_sound->fn->setString(Screen0_ButtonWidget_Opt_sound, (leString*)&string_soundOn);
+        Screen0_LabelOptSound->fn->setString(Screen0_LabelOptSound, (leString*)&string_SoundOn);
+        Screen0_ImageOptSound->fn->setImage(Screen0_ImageOptSound, (leImage*)&SoundOn);
         load_options.sound = true;
     }
 }
-
+*/
 void event_Screen0_ButtonWidget_Opt_rinse_OnReleased(leButtonWidget* btn)
 {
+    optionMenuTracking = Open;
     if(load_options.xrinse == true)
     {
-        Screen0_ButtonWidget_Opt_rinse->fn->setString(Screen0_ButtonWidget_Opt_rinse, (leString*)&string_xrinseOff);
+        Screen0_LabelOptRinse->fn->setString(Screen0_LabelOptRinse, (leString*)&string_XtraRinseOff);
         load_options.xrinse = false;
     }
     else
     {
-        Screen0_ButtonWidget_Opt_rinse->fn->setString(Screen0_ButtonWidget_Opt_rinse, (leString*)&string_xrinseOn);        
+        Screen0_LabelOptRinse->fn->setString(Screen0_LabelOptRinse, (leString*)&string_XtraRinseOn);
         load_options.xrinse = true;
     }
     
@@ -375,37 +437,70 @@ void event_Screen0_ButtonWidget_Opt_rinse_OnReleased(leButtonWidget* btn)
 
 void event_Screen0_ButtonWidget_Opt_preWash_OnReleased(leButtonWidget* btn)
 {
+    optionMenuTracking = Open;
     if(load_options.preWash == true)
     {
-        Screen0_ButtonWidget_Opt_preWash->fn->setString(Screen0_ButtonWidget_Opt_preWash, (leString*)&string_preWashOff);
+        Screen0_LabelOptPrewash->fn->setString(Screen0_LabelOptPrewash, (leString*)&string_preWashOff);
         load_options.preWash = false;
     }
     else
     {
-        Screen0_ButtonWidget_Opt_preWash->fn->setString(Screen0_ButtonWidget_Opt_preWash, (leString*)&string_preWashOn);       
+        Screen0_LabelOptPrewash->fn->setString(Screen0_LabelOptPrewash, (leString*)&string_preWashOn);
         load_options.preWash = true;
     }
 }
 
 
-void event_Screen0_ButtonWidget_Opt_close_OnReleased(leButtonWidget* btn)
+void event_Screen0_ButtonWidget_Opt_LoadSize_OnReleased(leButtonWidget* btn)
 {
-    currentButtonPressed = Options;
-    menu_anime_on = true;
-    menu_expand = false;
-    hideAllOptionButtons();
-    doneOptionAnime();
-    //TC1_CH0_TimerStart();
+    optionMenuTracking = Open;
+    if(load_options.loadSizeHigh == true)
+    {
+        Screen0_LabelOptLoadSize->fn->setString(Screen0_LabelOptLoadSize, (leString*)&string_LoadLow);        
+        load_options.loadSizeHigh = false;
+    }
+    else
+    {
+        Screen0_LabelOptLoadSize->fn->setString(Screen0_LabelOptLoadSize, (leString*)&string_LoadHigh);
+        load_options.loadSizeHigh = true;
+    }
 }
 
 void event_Screen0_ButtonWidget_Options_OnReleased(leButtonWidget* btn)
 {
-    currentButtonPressed = Options;
-    menu_anime_on = true;
-    menu_expand = true;
-    Screen0_RectangleWidget_backgroundOption->fn->setVisible(Screen0_RectangleWidget_backgroundOption, LE_TRUE);
-    TC0_CH1_TimerStop();
-    TC1_CH0_TimerStart();
+    if(button_Options == true)
+    {
+        //Here the button is in "Options" mode
+        button_Options = false;
+        currentButtonPressed = Options;
+        menu_anime_on = true;
+        //optionMenuTracking = Open;
+        Screen0_RectangleWidget_backgroundOption->fn->setVisible(Screen0_RectangleWidget_backgroundOption, LE_TRUE);
+        menu_tracker.opts = true;
+        if (menu_tracker.activeCount < MAX_MENUS)
+            menu_tracker.activeCount++;
+        TC0_CH1_TimerStop();
+        TC1_CH0_TimerStart();
+    }
+    else
+    {
+        //Here the button is in "Sound" mode             
+        optionMenuTracking = Open;
+        if(load_options.sound == true)
+        {
+            load_options.sound = false;
+            Screen0_LabelOptSound->fn->setString(Screen0_LabelOptSound, (leString*)&string_SoundOff);
+            Screen0_ImageOptSound->fn->setImage(Screen0_ImageOptSound, (leImage*)&SoundOff);
+
+        }
+        else
+        {
+            Screen0_LabelOptSound->fn->setString(Screen0_LabelOptSound, (leString*)&string_SoundOn);
+            Screen0_ImageOptSound->fn->setImage(Screen0_ImageOptSound, (leImage*)&SoundOn);
+            load_options.sound = true;
+        }
+  
+    }
 }
 void event_Screen0_ButtonWidget_Start_OnReleased(leButtonWidget* btn)
 {
@@ -452,9 +547,9 @@ void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
     {
         case Program:
             ht = Screen0_RectangleWidget_background_prog->fn->getHeight(Screen0_RectangleWidget_background_prog);
-            if(menu_expand)
-            {
-                if(ht < 160)
+            //if(menu_expand)
+            //{
+                if(ht < 195)
                 {
                     ht += 5;
                     ht = Screen0_RectangleWidget_background_prog->fn->setHeight(Screen0_RectangleWidget_background_prog, ht);
@@ -463,8 +558,8 @@ void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
                 {
                      showAllProgramButtons();
                 }
-            }
-            else
+            //}
+            /*else
             {
                 if(ht > 5)
                 {
@@ -476,13 +571,13 @@ void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
                      doneProgramAnime();
                      
                 }
-            }
+            }*/
             break;
         case Temperature:
             ht = Screen0_RectangleWidget_backgroundTemp->fn->getHeight(Screen0_RectangleWidget_backgroundTemp);
-            if(menu_expand)
-            {
-                if(ht < 105)
+            //if(menu_expand)
+            //{
+                if(ht < 135)
                 {
                     ht += 5;
                     ht = Screen0_RectangleWidget_backgroundTemp->fn->setHeight(Screen0_RectangleWidget_backgroundTemp, ht);
@@ -491,8 +586,8 @@ void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
                 {
                      showAllTempButtons();
                 }
-            }
-            else
+            //}
+            /*else
             {
                 if(ht > 5)
                 {
@@ -504,13 +599,13 @@ void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
                      doneTempAnime();
                      
                 }
-            }
+            }*/
             break;
         case SLevel:
             ht = Screen0_RectangleWidget_backgroundSLevel->fn->getHeight(Screen0_RectangleWidget_backgroundSLevel);
-            if(menu_expand)
-            {
-                if(ht < 105)
+            //if(menu_expand)
+            //{
+                if(ht < 135)
                 {
                     ht += 5;
                     ht = Screen0_RectangleWidget_backgroundSLevel->fn->setHeight(Screen0_RectangleWidget_backgroundSLevel, ht);
@@ -519,8 +614,8 @@ void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
                 {
                      showAllSoilButtons();
                 }
-            }
-            else
+            //}
+            /*else
             {
                 if(ht > 5)
                 {
@@ -532,13 +627,13 @@ void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
                      doneSoilAnime();
                      
                 }
-            }
+            }*/
             break;
         case Options:
             ht = Screen0_RectangleWidget_backgroundOption->fn->getHeight(Screen0_RectangleWidget_backgroundOption);
-            if(menu_expand)
-            {
-                if(ht < 205)
+            //if(menu_expand)
+            //{
+                if(ht < 195)
                 {
                     ht += 5;
                     ht = Screen0_RectangleWidget_backgroundOption->fn->setHeight(Screen0_RectangleWidget_backgroundOption, ht);
@@ -547,8 +642,8 @@ void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
                 {
                      showAllOptionButtons();
                 }
-            }
-            else
+            //}
+            /*else
             {
                 if(ht > 5)
                 {
@@ -560,7 +655,7 @@ void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
                      doneOptionAnime();
                      
                 }
-            }
+            }*/
             
             break;
     }
@@ -574,14 +669,15 @@ void Screen0_OnHide(void)
 
 void Screen0_OnShow(void)
 {
+    Screen0_ImagePopUp->fn->installEventFilter(Screen0_ImagePopUp, popup_filter);
     Screen0_Label_colon->fn->setString(Screen0_Label_colon, (leString*) &colonString);
     Screen0_Label_colon->fn->setVisible(Screen0_Label_colon, LE_TRUE);
     Screen0_LabelTime->fn->setVisible(Screen0_LabelTime, LE_TRUE);
     Screen0_LabelTime->fn->setString(Screen0_LabelTime, (leString*) &timeString);  
     //Screen0_LabelTime_2->fn->setString(Screen0_LabelTime_2, (leString*) &timeString2);  
 
-    Screen0_LabelTime_2->fn->setVisible(Screen0_LabelTime_2, LE_TRUE);
-    Screen0_LabelColon2->fn->setVisible(Screen0_LabelColon2, LE_TRUE);
+    //Screen0_LabelTime_2->fn->setVisible(Screen0_LabelTime_2, LE_TRUE);
+    //Screen0_LabelColon2->fn->setVisible(Screen0_LabelColon2, LE_TRUE);
     
     gfxcShowCanvas(TIME1_CANVAS_ID);
     gfxcCanvasUpdate(TIME1_CANVAS_ID); 
@@ -620,29 +716,29 @@ void editProgramList(uint8_t selProg)
     {
         case Normal:
         {
-            Screen0_ButtonWidget_p1->fn->setPressedImage(Screen0_ButtonWidget_p1, (leImage*)&normal_but_down);
-            Screen0_ButtonWidget_p1->fn->setReleasedImage(Screen0_ButtonWidget_p1, (leImage*)&normal_but_up);  
+            Screen0_Labelbuttonp1->fn->setString(Screen0_Labelbuttonp1, (leString*)&string_NormalProg);
+            Screen0_Imagebuttonp1->fn->setImage(Screen0_Imagebuttonp1, (leImage*)&normalprog);
             Screen0_ImageWidget_background2->fn->setImage(Screen0_ImageWidget_background2, (leImage*)&Normal_cycle);
             break;
         }
          case Sports:
         {
-            Screen0_ButtonWidget_p1->fn->setPressedImage(Screen0_ButtonWidget_p1, (leImage*)&sports_but_down);
-            Screen0_ButtonWidget_p1->fn->setReleasedImage(Screen0_ButtonWidget_p1, (leImage*)&sports_but_up);  
+            Screen0_Labelbuttonp1->fn->setString(Screen0_Labelbuttonp1, (leString*)&string_SportsProg);
+            Screen0_Imagebuttonp1->fn->setImage(Screen0_Imagebuttonp1, (leImage*)&sportsprog);
             Screen0_ImageWidget_background2->fn->setImage(Screen0_ImageWidget_background2, (leImage*)&sports_cycle);
             break;
         }
           case Wool:
         {
-            Screen0_ButtonWidget_p1->fn->setPressedImage(Screen0_ButtonWidget_p1, (leImage*)&wool_but_down);
-            Screen0_ButtonWidget_p1->fn->setReleasedImage(Screen0_ButtonWidget_p1, (leImage*)&wool_but_up);  
+            Screen0_Labelbuttonp1->fn->setString(Screen0_Labelbuttonp1, (leString*)&string_WoolProg);
+            Screen0_Imagebuttonp1->fn->setImage(Screen0_Imagebuttonp1, (leImage*)&woolprog);
             Screen0_ImageWidget_background2->fn->setImage(Screen0_ImageWidget_background2, (leImage*)&wool_cycle);
             break;
         }
            case Bedding:
         {
-            Screen0_ButtonWidget_p1->fn->setPressedImage(Screen0_ButtonWidget_p1, (leImage*)&bed_but_down);
-            Screen0_ButtonWidget_p1->fn->setReleasedImage(Screen0_ButtonWidget_p1, (leImage*)&bed_but_up);
+            Screen0_Labelbuttonp1->fn->setString(Screen0_Labelbuttonp1, (leString*)&string_BedProg);
+            Screen0_Imagebuttonp1->fn->setImage(Screen0_Imagebuttonp1, (leImage*)&bedprog);
             Screen0_ImageWidget_background2->fn->setImage(Screen0_ImageWidget_background2, (leImage*)&Bedding_cycle);
 
             break;
@@ -740,7 +836,7 @@ void update_spin_progress(void)
         }
         default:
         {
-            appData.state = APP_STATE_SWITCH_SCREEN;
+            appData.state = APP_STATE_SCREEN2_POPUP;
             break;
         }    
     }
@@ -752,13 +848,22 @@ void showAllOptionButtons(void)
 {
     TC1_CH0_TimerStop();
     TC0_CH1_TimerStart();
-    Screen0_ButtonWidget_Options->fn->setVisible(Screen0_ButtonWidget_Options, LE_FALSE);
-    Screen0_ButtonWidget_Opt_sound->fn->setVisible(Screen0_ButtonWidget_Opt_sound, LE_TRUE);
+    //Screen0_ButtonWidget_Opt_sound->fn->setVisible(Screen0_ButtonWidget_Opt_sound, LE_TRUE);
+   // Screen0_ButtonWidget_Options->fn->setPressedImage(Screen0_ButtonWidget_Options, (leImage*)&green_but_up);
+    Screen0_ImageOption1->fn->setVisible(Screen0_ImageOption1, LE_FALSE);
+    Screen0_ImageOption2->fn->setVisible(Screen0_ImageOption2, LE_FALSE);
+    Screen0_ImageOption3->fn->setVisible(Screen0_ImageOption3, LE_FALSE);
+    Screen0_ImageOption4->fn->setVisible(Screen0_ImageOption4, LE_FALSE);
+    Screen0_ImageOptSound->fn->setVisible(Screen0_ImageOptSound, LE_TRUE);
+    Screen0_LabelOptSound->fn->setVisible(Screen0_LabelOptSound, LE_TRUE);
+    //Screen0_ButtonWidget_Options->fn->setVisible(Screen0_ButtonWidget_Options, LE_FALSE);
     Screen0_ButtonWidget_Opt_rinse->fn->setVisible(Screen0_ButtonWidget_Opt_rinse, LE_TRUE);
     Screen0_ButtonWidget_Opt_preWash->fn->setVisible(Screen0_ButtonWidget_Opt_preWash, LE_TRUE);
-    Screen0_ButtonWidget_Opt_close->fn->setVisible(Screen0_ButtonWidget_Opt_close, LE_TRUE);
+    Screen0_ButtonWidget_Opt_LoadSize->fn->setVisible(Screen0_ButtonWidget_Opt_LoadSize, LE_TRUE);
     menu_anime_on = false;
-    
+    optionMenuTracking = Open;
+
+            
 }
 
 void hideAllOptionButtons(void)
@@ -767,17 +872,26 @@ void hideAllOptionButtons(void)
     //Screen0_ButtonWidget_Opt_sound->fn->setVisible(Screen0_ButtonWidget_Opt_sound, LE_FALSE);
     Screen0_ButtonWidget_Opt_rinse->fn->setVisible(Screen0_ButtonWidget_Opt_rinse, LE_FALSE);
     Screen0_ButtonWidget_Opt_preWash->fn->setVisible(Screen0_ButtonWidget_Opt_preWash, LE_FALSE);
-    Screen0_ButtonWidget_Opt_close->fn->setVisible(Screen0_ButtonWidget_Opt_close, LE_FALSE);
+    Screen0_ButtonWidget_Opt_LoadSize->fn->setVisible(Screen0_ButtonWidget_Opt_LoadSize, LE_FALSE);
 }
 
 void doneOptionAnime(void)
 {
-    TC1_CH0_TimerStop();
+    //TC1_CH0_TimerStop();
     Screen0_RectangleWidget_backgroundOption->fn->setVisible(Screen0_RectangleWidget_backgroundOption, LE_FALSE);
-    Screen0_ButtonWidget_Opt_sound->fn->setVisible(Screen0_ButtonWidget_Opt_sound, LE_FALSE);
-    Screen0_ButtonWidget_Options->fn->setVisible(Screen0_ButtonWidget_Options, LE_TRUE);
+    Screen0_ImageOption1->fn->setVisible(Screen0_ImageOption1, LE_TRUE);
+    Screen0_ImageOption2->fn->setVisible(Screen0_ImageOption2, LE_TRUE);
+    Screen0_ImageOption3->fn->setVisible(Screen0_ImageOption3, LE_TRUE);
+    Screen0_ImageOption4->fn->setVisible(Screen0_ImageOption4, LE_TRUE);
+    Screen0_ImageOptSound->fn->setVisible(Screen0_ImageOptSound, LE_FALSE);
+    Screen0_LabelOptSound->fn->setVisible(Screen0_LabelOptSound, LE_FALSE);
     menu_anime_on = false;
+    button_Options = true;
     
+    menu_tracker.opts = false;
+    if (menu_tracker.activeCount > MIN_MENUS)
+        menu_tracker.activeCount--;
+     
 }
 
 void showAllSoilButtons(void)
@@ -798,10 +912,13 @@ void hideAllSoilButtons(void)
 
 void doneSoilAnime(void)
 {
-    TC1_CH0_TimerStop();
+    //TC1_CH0_TimerStop();
     Screen0_RectangleWidget_backgroundSLevel->fn->setVisible(Screen0_RectangleWidget_backgroundSLevel, LE_FALSE);
     menu_anime_on = false;
-    
+    menu_tracker.slevel = false;
+    if (menu_tracker.activeCount > MIN_MENUS)
+        menu_tracker.activeCount--;
+   
 }
 
 
@@ -823,19 +940,26 @@ void hideAllTempButtons(void)
 
 void doneTempAnime(void)
 {
-    TC1_CH0_TimerStop();
+    //TC1_CH0_TimerStop();
     Screen0_RectangleWidget_backgroundTemp->fn->setVisible(Screen0_RectangleWidget_backgroundTemp, LE_FALSE);
     menu_anime_on = false;
-    
+    menu_tracker.temp = false;
+    if (menu_tracker.activeCount > MIN_MENUS)
+        menu_tracker.activeCount--;
+   
 }
 
 
 
 void doneProgramAnime(void)
 {  
-    TC1_CH0_TimerStop();
+    //TC1_CH0_TimerStop();
     Screen0_RectangleWidget_background_prog->fn->setVisible(Screen0_RectangleWidget_background_prog, LE_FALSE);
-    menu_anime_on = false;    
+    menu_anime_on = false;   
+    menu_tracker.prog = false;
+    if (menu_tracker.activeCount > MIN_MENUS)
+        menu_tracker.activeCount--;
+        
 }
 void showAllProgramButtons(void)
 {
@@ -853,6 +977,33 @@ void hideAllProgramButtons(void)
     Screen0_ButtonWidget_p3->fn->setVisible(Screen0_ButtonWidget_p3, LE_FALSE);
     Screen0_ButtonWidget_p4->fn->setVisible(Screen0_ButtonWidget_p4, LE_FALSE);
 }
+
+void closeOptionMenu(void)
+{
+    static uint8_t optMenuCounterS;
+    static uint8_t optMenuCounterE;
+    static uint8_t newSec=0;
+    if(optionMenuTracking == Open){
+        optMenuCounterS = sec;
+        newSec = optMenuCounterS;
+        optMenuCounterE = optMenuCounterS;
+        optionMenuTracking = Closing;
+    }
+    if(optionMenuTracking == Closing){
+        if (sec != newSec){
+            newSec = sec;
+            optMenuCounterE++;
+        }
+    }
+    //if 3s have passed, close the Options Menu
+    if((optMenuCounterE - optMenuCounterS) >=3)
+    {
+        optionMenuTracking = Close;
+        hideAllOptionButtons();
+        doneOptionAnime();
+    }
+}
+
 
 void init_anim_images(void)
 {
@@ -898,6 +1049,16 @@ void init_anim_images(void)
     RoundImgAnim[13]= &r14;
     RoundImgAnim[14]= &r15;
     RoundImgAnim[15]= &r16;
+    RoundImgAnim[16]= &r17;
+    RoundImgAnim[17]= &r18;
+    RoundImgAnim[18]= &r19;
+    RoundImgAnim[19]= &r20;
+    RoundImgAnim[20]= &r21;
+    RoundImgAnim[21]= &r22;
+    RoundImgAnim[22]= &r23;
+    RoundImgAnim[23]= &r24;
+    RoundImgAnim[24]= &r25;
+    RoundImgAnim[25]= &r26;
    
 }
 
@@ -905,10 +1066,13 @@ void update_time(void)
 {
     if (sec != prev_sec)
     {
-        progress_cnt++;
-        if(progress_cnt>3){
-            progress_cnt=0;
-            update_progWheel = true;
+        if(appData.screen == SCREEN1)
+        {
+            progress_cnt++;
+            if(progress_cnt>2){
+                progress_cnt=0;
+                update_progWheel = true;
+            }
         }
         prev_sec = sec;
         if(colon_visi){
@@ -926,8 +1090,8 @@ void update_time(void)
         }
         if(appData.screen == SCREEN0)
             gfxcCanvasUpdate(TIME1_CANVAS_ID); 
-        //else
-        //    gfxcCanvasUpdate(TIME2_CANVAS_ID); 
+        else
+            gfxcCanvasUpdate(TIME2_CANVAS_ID); 
 
         
     }
@@ -953,7 +1117,7 @@ void update_time(void)
         else
         {
             //timeString2.fn->setFromCStr(&timeString2, cCharBuffer);
-            Screen0_LabelTime_2->fn->setString(Screen0_LabelTime_2, (leString*) &timeString);
+            //Screen0_LabelTime_2->fn->setString(Screen0_LabelTime_2, (leString*) &timeString);
             gfxcCanvasUpdate(TIME2_CANVAS_ID);
         }
         
@@ -977,12 +1141,14 @@ void update_SCREEN0(void)
             anim_cnt =1;
 
         gfxcCanvasUpdate(WAVES_CANVAS_ID); 
-        //gfxcCanvasUpdate(TOP_CANVAS_ID); 
     }
     if(menu_anime_on)
     {
-        //gfxcCanvasUpdate(WAVES_CANVAS_ID); 
         gfxcCanvasUpdate(MENU_CANVAS_ID); 
+    }else
+    {
+        /* If Options Menu is open, we close it in 3 seconds */
+        closeOptionMenu();        
     }
 
 }
@@ -1000,7 +1166,7 @@ void switchScreen0to1(void)
     gfxcCanvasUpdate(WAVES_CANVAS_ID); 
     gfxcHideCanvas(MENU_CANVAS_ID);
     gfxcCanvasUpdate(MENU_CANVAS_ID);
-        
+     
     Screen0_PanelWidget_screen2->fn->setEnabled(Screen0_PanelWidget_screen2, LE_TRUE);
     Screen0_ImageWidget_background2->fn->setEnabled(Screen0_ImageWidget_background2, LE_TRUE);
     Screen0_ButtonWidget_exit->fn->setEnabled(Screen0_ButtonWidget_exit, LE_TRUE);
@@ -1012,8 +1178,8 @@ void switchScreen0to1(void)
     //Screen0_LabelColon2->fn->setVisible(Screen0_LabelColon2, LE_TRUE);
     //Screen0_LabelColon2->fn->setString(Screen0_LabelColon2, (leString*) &colonString);
     
-    Screen0_LabelTime_2->fn->setEnabled(Screen0_LabelTime_2, LE_TRUE);
-    Screen0_LabelColon2->fn->setEnabled(Screen0_LabelColon2, LE_TRUE);
+    //Screen0_LabelTime_2->fn->setEnabled(Screen0_LabelTime_2, LE_TRUE);
+    //Screen0_LabelColon2->fn->setEnabled(Screen0_LabelColon2, LE_TRUE);
 
     gfxcShowCanvas(BACKGROUND2_CANVAS_ID);
     gfxcCanvasUpdate(BACKGROUND2_CANVAS_ID); 
@@ -1026,18 +1192,20 @@ void switchScreen0to1(void)
     gfxcCanvasUpdate(TOP_CANVAS_ID); 
     appData.screen = SCREEN1;
     spin_count=0;
+    popUp = false;
 }
 
 void switchScreen1to0(void)
 {
+    Screen0_ImagePopUp->fn->setVisible(Screen0_ImagePopUp, LE_FALSE);  
     Screen0_ImageWidget_progress->fn->setImage(Screen0_ImageWidget_progress, (leImage*)&PreWash0);
     Screen0_ImageWidget_background2->fn->setEnabled(Screen0_ImageWidget_background2, LE_FALSE);
     Screen0_PanelWidget_screen2->fn->setEnabled(Screen0_PanelWidget_screen2, LE_FALSE);
     Screen0_ButtonWidget_exit->fn->setEnabled(Screen0_ButtonWidget_exit, LE_FALSE);
     Screen0_ButtonWidget_pp->fn->setEnabled(Screen0_ButtonWidget_pp, LE_FALSE);
     Screen0_ImageWidget_progress->fn->setEnabled(Screen0_ImageWidget_progress, LE_FALSE);
-    Screen0_LabelTime_2->fn->setEnabled(Screen0_LabelTime_2, LE_FALSE);
-    Screen0_LabelColon2->fn->setEnabled(Screen0_LabelColon2, LE_FALSE);
+    //Screen0_LabelTime_2->fn->setEnabled(Screen0_LabelTime_2, LE_FALSE);
+    //Screen0_LabelColon2->fn->setEnabled(Screen0_LabelColon2, LE_FALSE);
     //Screen0_LabelTime_2->fn->setVisible(Screen0_LabelTime_2, LE_FALSE);
     //Screen0_LabelColon2->fn->setVisible(Screen0_LabelColon2, LE_FALSE);
      
@@ -1045,7 +1213,30 @@ void switchScreen1to0(void)
     //Screen0_Label_colon->fn->setVisible(Screen0_Label_colon, LE_TRUE);
     //Screen0_LabelTime->fn->setString(Screen0_LabelTime, (leString*) &timeString); 
     //Screen0_Label_colon->fn->setString(Screen0_Label_colon, (leString*) &colonString);
-    
+    //if(menu_tracker.activeCount > MIN_MENUS)
+    //{
+        //menu_expand = false;
+        if(menu_tracker.prog == true)
+        {            
+            hideAllProgramButtons();
+            doneProgramAnime();           
+        }
+        if(menu_tracker.temp == true)
+        {
+            hideAllTempButtons();
+            doneTempAnime();           
+        }
+        if(menu_tracker.slevel == true)
+        {
+            hideAllSoilButtons();
+            doneSoilAnime();           
+        }
+        if(menu_tracker.opts == true)
+        {
+            hideAllOptionButtons();
+            doneOptionAnime();           
+        }
+    //}
     gfxcHideCanvas(BACKGROUND2_CANVAS_ID);
     gfxcCanvasUpdate(BACKGROUND2_CANVAS_ID); 
     
@@ -1066,6 +1257,11 @@ void switchScreen1to0(void)
     gfxcCanvasUpdate(WAVES_CANVAS_ID); 
     gfxcShowCanvas(MENU_CANVAS_ID);
     gfxcCanvasUpdate(MENU_CANVAS_ID);
+    if(roundV_paused)
+    {
+        roundV_paused = false;
+        TC0_CH1_TimerStart();
+    }
     appData.screen = SCREEN0;
 }
 
@@ -1090,12 +1286,40 @@ void update_SCREEN1(void)
                GFX_COLOR_MODE_RGBA_8888,
                (void *) RoundImgAnim[anim_cnt++]->buffer.pixels);
 
-        if(anim_cnt >=12)
+        if(anim_cnt >=25)
             anim_cnt =1;
 
         gfxcCanvasUpdate(ROUND_CANVAS_ID); 
     }
     //gfxcCanvasUpdate(TIME2_CANVAS_ID); 
+}
+
+void show_popup()
+{
+    static uint8_t popUpCounterS;
+    static uint8_t popUpCounterE;
+    static uint8_t newS=0;
+    if(popUp == false)
+    {
+        Screen0_ImagePopUp->fn->setVisible(Screen0_ImagePopUp, LE_TRUE);
+        gfxcCanvasUpdate(TOP_CANVAS_ID);
+        popUp=true;
+        popUpCounterS = sec;
+        newS = popUpCounterS;
+        popUpCounterE = popUpCounterS;
+    }
+    else
+    {
+        if (sec != newS){
+            newS = sec;
+            popUpCounterE++;
+        }
+    }
+    //if 5s have passed, go back to Screen0
+    if((popUpCounterE - popUpCounterS) >=5)
+    {
+        appData.state = APP_STATE_SWITCH_SCREEN;
+    }
 }
 
 // *****************************************************************************
@@ -1175,7 +1399,13 @@ void APP_Initialize ( void )
     colonString.fn->setFont(&colonString, (leFont*)&NotoSans_Bold);
     
     appData.screen = SCREEN0;
-
+    progMenuTracking = pbClose;
+    tempMenuTracking = tbClose;
+    soilMenuTracking = sbClose;
+    optionMenuTracking = Close;
+    menu_tracker.activeCount = 0;
+    popup_filter.filterEvent = popup_Callback;
+    popup_filter.data = NULL;
 }
 
 
@@ -1224,6 +1454,12 @@ void APP_Tasks ( void )
                update_SCREEN1();
                         
            break;
+        }
+        case APP_STATE_SCREEN2_POPUP:
+        {
+            show_popup();
+            
+            break;
         }
         case APP_STATE_SWITCH_SCREEN:
         {
